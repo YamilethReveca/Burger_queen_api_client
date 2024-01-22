@@ -5,7 +5,7 @@ import { LoginComponent } from './login/login/login.component';
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'pedidos', loadChildren: () => import('./pedidos/pedidos.module').then(m => m.PedidosModule) },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '**', redirectTo: '', pathMatch: 'full' },
 
 ];
 

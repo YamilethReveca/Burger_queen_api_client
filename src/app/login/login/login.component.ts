@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,14 +9,32 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  formulario: FormGroup = this.formBuilder.group({
 
- 
+    email: ['', [Validators.required, Validators.email]],
+    clave: ['', Validators.required]
+  });;
 
-  ngOnInit(){
+  constructor(
+    private router: Router,
+    private formBuilder: FormBuilder
+  ) { }
 
-
-    this.router.navigate(['pedidos']);
+  ngOnInit(): void {
   }
 
+  enviarFormulario() {
+
+    if (this.formulario && this.formulario.get('email')) {
+
+      if (this.formulario.valid) {
+        this.router.navigate(['pedidos']);
+      }
+    }
+  }
 }
+
+
+
+
+
