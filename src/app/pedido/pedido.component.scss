@@ -20,7 +20,7 @@ main{
 #menu-tarde {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 30%;
   border: 2px solid black;
   border-radius: 10px;
   margin-bottom: 5px;
@@ -69,4 +69,11 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#mañana{
+
+  list-style: none;
+  display: grid;
+  // grid-template-rows: 1fr 1fr 1fr 1fr;
 }
