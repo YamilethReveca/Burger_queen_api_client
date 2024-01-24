@@ -15,8 +15,11 @@
         </div>
         <label for="clave">Ingresar su clave</label><br>
         <input type="password" id="clave" placeholder="Clave" formControlName="clave"><br>
-        <div *ngIf="formulario.get('clave')?.errors?.required" class="error">La clave es requerida.</div>
+        <div *ngIf="formulario.get('clave')?.invalid && formulario.get('clave')?.touched">
+          <div *ngIf="formulario.get('clave')?.errors?.required" class="error">La clave es requerida.</div>
+        </div>
         <button type="submit" [disabled]="formulario.invalid" id="boton-enviar">Enviar</button>
+        <div *ngIf="errorMensaje" class="error">{{ errorMensaje }}</div>
       </section>
     </section>
   </form>
