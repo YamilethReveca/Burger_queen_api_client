@@ -12,7 +12,7 @@
   font-size: 30px;
   width: 100%;
   height: 100%;
-  border:1px solid rgb(130, 162, 132);
+  border: 1px solid rgb(130, 162, 132);
   background-color: rgb(219, 231, 201);
 }
 
@@ -22,7 +22,15 @@ h1 {
   padding: 5px;
   font-size: 50px;
   color: 333333;
-  
+  font-family: Helvetica, sans-serif;
+ 
+
+}
+
+h3 {
+  font-family: Helvetica, sans-serif;
+  font-size: 20px;
+
 }
 
 #datosUsuario {

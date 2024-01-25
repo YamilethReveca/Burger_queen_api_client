@@ -10,6 +10,9 @@ import { AuthService } from 'src/app/auth.service';// inyeccion del servicio
 })
 export class LoginComponent implements OnInit {
 
+  //propiedad formulario y se espera que sea de tipo  FormGroup
+  //FormGrup es una clase que proporcionada por el módulo @angular/forms
+
   formulario!: FormGroup;
   errorMensaje!: string;
 
@@ -25,7 +28,7 @@ export class LoginComponent implements OnInit {
       clave: ['', Validators.required]
     });
   }
-
+// validar si el correo y el password es correcto, si lo es me envia al pedido sino me muestra el error.
   enviarFormulario(): void {
     const { email, clave } = this.formulario.value;
 
@@ -39,15 +42,15 @@ export class LoginComponent implements OnInit {
         }
       },
       error: (error: any) => {
-       
+
         console.error('Error de autenticación:', error);
-  
+
         if (error && error.error) {
           this.errorMensaje = error.error;
         } else {
           this.errorMensaje = 'Error de autenticación';
         }
-  
+
         console.log('Valor de errorMensaje:', this.errorMensaje);
       }
     });
