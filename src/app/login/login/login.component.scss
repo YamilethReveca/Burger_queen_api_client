@@ -3,10 +3,16 @@
   padding: 0;
 }
 
+#titulo{
+
+  width: 50%;
+  
+}
+
 #contenedor {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content:center;
+  align-items:center;
   font-family: cursive;
   margin-top: 50px;
   font-size: 30px;
@@ -30,6 +36,7 @@ h1 {
 h3 {
   font-family: Helvetica, sans-serif;
   font-size: 20px;
+  margin-left: 10px;
 
 }
 

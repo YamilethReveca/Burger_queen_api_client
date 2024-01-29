@@ -1,26 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , OnDestroy} from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from 'src/app/auth.service';// inyeccion del servicio
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'; // FORMULARIO REACTIVO
+import { AuthService } from '../../auth.service'; // Inyeccion del servicio 
+import { Subscription } from 'rxjs'; // se usa para despues desuscribirme de una suscripcion.
+import { LoginResponse } from 'src/app/models/loginResponse';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+
+export class LoginComponent implements OnInit, OnDestroy  {
 
   //propiedad formulario y se espera que sea de tipo  FormGroup
   //FormGrup es una clase que proporcionada por el módulo @angular/forms
 
   formulario!: FormGroup;
   errorMensaje!: string;
+  private subscription: Subscription | undefined;
+
 
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService, 
+   
   ) { }
+  
 
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
@@ -28,21 +35,23 @@ export class LoginComponent implements OnInit {
       clave: ['', Validators.required]
     });
   }
-// validar si el correo y el password es correcto, si lo es me envia al pedido sino me muestra el error.
+  
+  // validar si el correo y el password es correcto, si lo es me envia al pedido sino me muestra el error.
   enviarFormulario(): void {
     const { email, clave } = this.formulario.value;
 
-    this.authService.login(email, clave).subscribe({
-      next: (response: { accessToken: string }) => {
-        if (response && response.accessToken) {
-          localStorage.setItem("accessToken", response.accessToken);
+    this.subscription = this.authService.login(email, clave).subscribe(
+      (response: LoginResponse) => {
+        if (response) {
+          this.authService.setIsLoggedInVar=true;
+          localStorage.setItem("accessToken", response.accessToken); // Almacena un token simulado
           this.router.navigate(['pedidos']);
         } else {
           console.error('Error de autenticación');
+          this.errorMensaje = 'Error de autenticación';
         }
       },
-      error: (error: any) => {
-
+      (error: any) => {
         console.error('Error de autenticación:', error);
 
         if (error && error.error) {
@@ -53,6 +62,12 @@ export class LoginComponent implements OnInit {
 
         console.log('Valor de errorMensaje:', this.errorMensaje);
       }
-    });
+    );
+  }
+
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 }

@@ -1,25 +1,36 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';// Importar el HttpClient e inyectarlo en el constructor
 import { Observable } from 'rxjs';
+import { LoginResponse } from './models/loginResponse';
 
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class AuthService {
 
-  // metodo post para la peticiones
-
+  private isLoggedInVar: boolean = false;
   private apiUrl = "http://localhost:8080";
 
   constructor(private http: HttpClient) { }
 
-  //login(email: string, password: string): Observable<boolean> {
-    login(email: string, password: string): Observable<{ accessToken: string }> {
+  isLoggedIn(): boolean {
+    return this.isLoggedInVar;
+  }
 
-    const body = { email, password };
-    //return this.http.post<any>(`${this.apiUrl}/login`, body);
-    return this.http.post<{ accessToken: string }>(`${this.apiUrl}/login`, body);
+  set setIsLoggedInVar(value: boolean) {
 
+    this.isLoggedInVar= value;
+  }
+
+  login(email: string, password: string): Observable<LoginResponse> {
+    
+
+    return this.http.post<LoginResponse>(`${this.apiUrl}/login`, { email, password });
+  }
+
+  logout(): void {
+    this.isLoggedInVar = false;
   }
 }
-

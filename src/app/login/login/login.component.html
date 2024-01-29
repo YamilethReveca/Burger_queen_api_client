@@ -1,11 +1,12 @@
 <app-header></app-header>
+
 <body>
-  <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
-    <section id="contenedor">
-      <section id="titulo">
-        <h1>Burger DeliciasApp</h1>
-        <h3>Cafeteria Restaurant</h3> 
-      </section>
+  <section id="contenedor">
+    <section id="titulo">
+      <h1>Burger DeliciasApp</h1>
+      <h3>Cafeteria Restaurant</h3>
+    </section>
+    <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
       <section id="datosUsuario">
         <label for="correo">Ingresar su cuenta</label><br>
         <input type="email" id="correo" placeholder="Correo electrónico" formControlName="email"><br>
@@ -21,7 +22,7 @@
         <button type="submit" [disabled]="formulario.invalid" id="boton-enviar">Enviar</button>
         <div *ngIf="errorMensaje" class="error">{{ errorMensaje }}</div>
       </section>
-    </section>
-  </form>
-  <app-footer></app-footer>
+    </form>
+  </section> 
 </body>
+<app-footer></app-footer>
