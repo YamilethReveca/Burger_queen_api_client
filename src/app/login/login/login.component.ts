@@ -42,14 +42,11 @@ export class LoginComponent implements OnInit, OnDestroy  {
 
     this.subscription = this.authService.login(email, clave).subscribe(
       (response: LoginResponse) => {
-        if (response) {
+        
           this.authService.setIsLoggedInVar=true;
           localStorage.setItem("accessToken", response.accessToken); // Almacena un token simulado
           this.router.navigate(['pedidos']);
-        } else {
-          console.error('Error de autenticación');
-          this.errorMensaje = 'Error de autenticación';
-        }
+       
       },
       (error: any) => {
         console.error('Error de autenticación:', error);
