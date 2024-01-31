@@ -1,3 +1,34 @@
+## 1.2.0 - 2024-01-31
+
+### Sprint learnings
+
+Culminación de la primera historia de usuario y desplegado en vercel. Inicie el dia 29 con la segunda historia de usuario donde solo pude renderizar los productos.
+
+### Added
+
+En esta sección especifica las funcionalides que agregaste.
+
+Renderizar los productos del menú.
+
+### Changed
+
+En esta sección detalla los cambios que hiciste a funcionalides ya existentes.
+Ninguna.
+
+### Fixed
+
+En esta sección describe los _bugs_ solucionados.
+Tuve problema para entender como usar el swaggerHub pero ya me explicaron como usarlo y asi pude renderizar los productos.
+
+### Removed
+
+En esta sección incluye las funcionalidades eliminadas.
+Ninguna.
+
+
+
+_________________________________
+
 ## 1.1.0 - 2024-01-24
 
 ### Sprint learnings
