@@ -1,42 +1,26 @@
-<main id="main">  
+
   <section id="contenedor">
     <div id="div-desayuno-tarde">
       <div><button>Desayuno</button></div>
       <div><button>Resto del día</button></div>
     </div>
     <label class="producto">Producto<span>Precio $</span></label>
-    <section id="menu-dia">      
-      <ul id="mañana">        
-        <li type="button">
-          <img>
-          <p>Nombre del producto:</p>
-          <p>Precio: 5</p>
-          <p>Tipo de menú:</p>
+    <section id="menu">
+      <ul id="mañana">
+        <li *ngFor="let producto of productos" type="button">
+          <img [src]="producto.image" alt="Imagen del producto"><br>
+          <p class="tituloProducto">Product:{{producto.name}}</p><br>
+          <p class="tituloProducto">Price:{{producto.price}}</p><br>
+          <p class="tituloProducto">Type:{{producto.type}}</p>
         </li>
       </ul>
     </section>
-
-    <section id="menu-tarde">
-      <label class="producto">Hamburguesas <span>Precio $</span></label>
-      <button type="button">Hamburguesa simple<span>10</span></button>
-      <button type="button">Hamburguesa doble <span>15</span></button>
-      <label class="producto">Acompañamiento<span>$</span></label>
-      <button type="button">Papas fritas<span>5</span></button>
-      <button type="button">Aros de cebolla <span>5</span></button>
-      <label class="producto">Para tomar<span>$</span></label>
-      <button type="button">Agua 500ml<span>5</span></button>
-      <button type="button">Agua 750ml<span>5</span></button>
-      <button type="button">Bebida/gaseosa 500ml<span>7</span></button>
-      <button type="button">Bebida/gaseosa 750ml<span>10</span></button>
+    <section id="ResumenVenta">
+      <div>
+        <h2>Resumen del pedido</h2>
+        <label>Cliente </label>
+        <input type="text" placeholder="Nombre del cliente">
+        <p>Total a cancelar: $ </p>
+        <button id="envioCocina" type="submit">Enviar pedido al cocinero</button>
+      </div>
     </section>
-  </section>
-  <section id="ResumenVenta">
-    <div>
-      <h2>Resumen del pedido</h2>
-      <label>Cliente </label>
-      <input type="text" placeholder="Nombre del cliente">
-      <p>Total a cancelar: $ </p>
-      <button id="envioCocina" type="submit">Enviar pedido al cocinero</button>
-    </div>
-  </section>
-</main>

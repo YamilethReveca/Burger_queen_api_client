@@ -1,13 +1,13 @@
-main{
+#menu {
+
   display: flex;
-  
-}
-
-
-#contenedor {
   width: 100%;
   height: 100%;
+  flex-direction: row;
+  width: 100%;
+  height: 250px;
 }
+
 
 #div-desayuno-tarde {
   display: flex;
@@ -16,44 +16,52 @@ main{
   justify-content: center;
 }
 
-#menu-dia,
-#menu-tarde {
-  display: flex;
-  flex-direction: column;
-  width: 30%;
+.tituloProducto {
+
+  display: block;
+
+}
+
+ul {
+
+  display: flex; 
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+}
+
+li {
+  border-radius: 10px;
   border: 2px solid black;
-  border-radius: 10px;
-  margin-bottom: 5px;
-  padding: 5px;
+  margin: 5px;
+  width: 30%;
+  height: 120px;
+  display: flex;
+  flex-direction: row;
+
 }
 
-button {
-  display: flex;
-  justify-content: space-between;
-  background-color: azure;
-  border-radius: 10px;
-  font-size: 20px;
-  margin-bottom: 5px;
+
+img {
+  width: 120px;
+  height: 100px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 5px;
+  margin-right: 5px;
+
 }
 
-.producto {
-  display: flex;
-  justify-content: space-between;
-  background-color: aqua;
-  font-size: 30px;
-  margin-bottom: 10px;
-  border-bottom: 2px solid black;
-}
 
 #ResumenVenta {
   border: 2px solid black;
   width: 30%;
   height: 50%;
   display: flex;
-  margin-top: 100px;
-  margin-right: 50px;
-  
-  
+  margin-left: 500px;
+ 
+
+
 }
 
 h2 {
@@ -71,9 +79,9 @@ h2 {
   align-items: center;
 }
 
-#mañana{
+#mañana {
 
   list-style: none;
   display: grid;
-  // grid-template-rows: 1fr 1fr 1fr 1fr;
+  // grid-template-rows: 1fr 1fr 1fr 1fr;	
 }
