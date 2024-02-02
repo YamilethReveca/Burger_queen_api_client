@@ -7,20 +7,26 @@
     <label class="producto">Producto<span>Precio $</span></label>
     <section id="menu">
       <ul id="mañana">
-        <li *ngFor="let producto of productos" type="button">
+        <li *ngFor="let producto of productos" type="button"  (click)="agregarAlPedido(producto)">
           <img [src]="producto.image" alt="Imagen del producto"><br>
-          <p class="tituloProducto">Product:{{producto.name}}</p><br>
-          <p class="tituloProducto">Price:{{producto.price}}</p><br>
+          <p class="tituloProducto">Product:{{producto.name}}</p>
+          <p class="tituloProducto">Price:{{producto.price}}</p>
           <p class="tituloProducto">Type:{{producto.type}}</p>
         </li>
       </ul>
     </section>
-    <section id="ResumenVenta">
-      <div>
+    <section id="resumenVenta">
+      <div id="pedidoCliente">
         <h2>Resumen del pedido</h2>
-        <label>Cliente </label>
+        <label>Cliente:</label>
         <input type="text" placeholder="Nombre del cliente">
-        <p>Total a cancelar: $ </p>
-        <button id="envioCocina" type="submit">Enviar pedido al cocinero</button>
+        <p>Total a cancelar: ${{total}}  </p>        
+        <ul>
+          <li *ngFor="let producto of pedido">
+            {{producto.name}} - {{producto.price}}
+          </li>
+          <button id="envioCocina" type="submit">Enviar pedido al cocinero</button>
+        </ul>        
       </div>
     </section>
+  </section>

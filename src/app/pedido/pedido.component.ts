@@ -13,7 +13,9 @@ import { PedidosService } from '../pedidos.service';
 export class PedidoComponent implements OnInit {
 
 
-  productos: ProductResponse[] = [];
+  productos: ProductResponse[] = []; // los productos completos
+  pedido: ProductResponse[] = [];  // uno por uno para el resumen 
+  total: number = 0; // inicializo en 0 el total
 
   private subscription: Subscription | undefined;
 
@@ -29,11 +31,22 @@ export class PedidoComponent implements OnInit {
 
       },
 
-
-
       () => { })
 
+
+
+
   }
+
+
+  agregarAlPedido(producto: ProductResponse): void {
+    // Agregar el producto al array del pedido
+    this.pedido.push(producto);
+
+    this.total = this.pedido.reduce((acc, curr) => acc + curr.price, 0);
+  }
+
+
 
 
 }
