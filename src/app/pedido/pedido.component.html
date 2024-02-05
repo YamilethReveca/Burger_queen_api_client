@@ -2,15 +2,15 @@
   <div id="div-desayuno-tarde">
     <div><button class="barraMenu" (click)="cambiarMenu('Breakfast')">Desayuno</button></div>
     <div><button class="barraMenu" (click)="cambiarMenu('Lunch')">Almuerzo</button></div>
-    <div><button class="barraMenu" (click)="cambiarMenu('Beverages')">Bebida-Postre-Café</button></div>
-    <div><button class="barraMenu" (click)="cambiarMenu('Combos')">Combo</button></div>
+    <div><button class="barraMenu" (click)="cambiarMenu('Beverages')">Bebidas-Postre-Café</button></div>
+    <div><button class="barraMenu" (click)="cambiarMenu('Combos')">Combos</button></div>
     <div><button class="barraMenu" (click)="cambiarMenu('Sides')">Sides</button></div>
   </div>
 
   <div id="contenedorProducto-Resumen">
     <section id="menu">
       <ul id="mañana">
-        <li *ngFor="let product of obtenerProductosFiltrados()" type="button" (click)="totalACancelar(product)" class="mañana">
+        <li *ngFor="let product of obtenerProductosFiltrados()" type="button" (click)="agregandoProductoResumen(product)" class="mañana">
           <img *ngIf="product.image" [src]="product.image" alt="Imagen del producto"><br>
           <ng-container *ngIf="!product.image">
             <img src="../../assets/imagenes/default.png" alt="Imagen predeterminada"><br>

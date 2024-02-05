@@ -28,12 +28,12 @@ export class PedidosService {
 
   // header para eliminar un producto del resumen de compra
 
-  eliminarProductoDelPedido(orderId: string): Observable<any> {
-    const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
-    });
+  // eliminarProductoDelPedido(orderId: string): Observable<any> {
+  //   const headers = new HttpHeaders({
+  //     'Content-Type': 'application/json',
+  //     Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+  //   });
   
-    return this.http.delete(`http://localhost:8080/orders/${orderId}`, { headers });
-  }
+  //   return this.http.delete(`http://localhost:8080/orders/${orderId}`, { headers });
+  // }
 }

@@ -55,7 +55,7 @@ export class PedidoComponent implements OnInit {
 
   // el total del resumen pedido
 
-  totalACancelar(producto: ProductResponse): void {
+  agregandoProductoResumen(producto: ProductResponse): void {
 
     this.pedido.push(producto);
 
@@ -67,26 +67,14 @@ export class PedidoComponent implements OnInit {
   // eliminar un producto del resumen de compra
 
   eliminarDelPedido(index: number): void {
-
     if (index >= 0 && index < this.pedido.length) {
       const productoEliminado = this.pedido.splice(index, 1)[0];
       this.total = this.pedido.reduce((number, productResponse) => number + productResponse.price, 0);
 
-      // Llama al servicio para eliminar el producto del pedido en el servidor
-      this.pedidoService.eliminarProductoDelPedido(productoEliminado.id.toString()).subscribe(
-        () => {
-          console.log(`Producto ${productoEliminado.name} eliminado del pedido en el servidor.`);
-        },
-        (error) => {
-          console.error('Error al eliminar el producto del pedido en el servidor:', error);
-
-          this.pedido.splice(index, 0, productoEliminado);
-          this.total = this.pedido.reduce((number, productResponse) => number + productResponse.price, 0);
-        }
-      );
+      // No es necesario llamar al servicio para eliminar el producto del servidor
+      console.log(`Producto ${productoEliminado.name} eliminado del resumen del pedido localmente.`);
     }
   }
-
 
 
 }
