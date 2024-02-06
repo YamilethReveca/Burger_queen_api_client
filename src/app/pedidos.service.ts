@@ -32,6 +32,7 @@ export class PedidosService {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
     });
+    console.log('enviando a cocina pedido:')
     return this.http.post<OrderResponse>("http://localhost:8080/orders",pedido, { headers });
   }
 
