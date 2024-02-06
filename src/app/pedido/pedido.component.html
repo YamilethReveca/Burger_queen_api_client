@@ -26,7 +26,7 @@
       <div id="pedidoCliente">
         <ul id="ulResumen">
           <label id="nombreCliente">Cliente:</label>
-          <input type="text" placeholder="Nombre del cliente" [(ngModel)]="nombreCliente">
+          <input type="text" name="cliente" placeholder="Nombre del cliente" [(ngModel)]="nombreCliente">
           <li *ngFor="let product of pedido; let i = index" id="liResumen">
             <div class="contenedorResumen">
               <p class="product-precio"> {{product.name}}</p>
