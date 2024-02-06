@@ -3,7 +3,7 @@ import { ProductResponse } from '../models/productResponse';
 import { Subscription } from 'rxjs';
 import { PedidosService } from '../pedidos.service';
 import { OrderResponse } from '../models/orderResponse';
-import { FormsModule } from '@angular/forms';
+
 @Component({
   selector: 'app-pedido',
   templateUrl: './pedido.component.html',
@@ -17,14 +17,6 @@ export class PedidoComponent implements OnInit {
   total: number = 0; // inicializo en 0 el total
   menuSeleccionado: string = 'Desayuno'; // tipo de menú seleccionado
   nombreCliente: string = '';
-
-  imagenURL = '../../assets/imagenes/default.png';
-
-  handleError(): void {
-    console.log('Error al cargar la imagen.');
-    this.imagenURL = '../../assets/imagenes/error.png'; // Puedes establecer una imagen de error diferente si lo deseas.
-  }
-
 
 
   private subscription: Subscription | undefined;
@@ -45,10 +37,6 @@ export class PedidoComponent implements OnInit {
       },
 
       () => { })
-
-
-
-
   }
 
   // Filtrar los productos según el tipo de menú seleccionado
@@ -120,8 +108,6 @@ export class PedidoComponent implements OnInit {
       (response) => {
         console.log('Pedido enviado a cocina:', response);
 
-        // Realiza cualquier otra acción necesaria después de enviar a cocina
-        // Por ejemplo, limpiar el pedido localmente
         this.pedido = [];
         this.total = 0;
         this.nombreCliente = "";

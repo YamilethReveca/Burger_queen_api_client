@@ -6,45 +6,45 @@
     <div><button class="barraMenu" (click)="cambiarMenu('Combos')">Combos</button></div>
     <div><button class="barraMenu" (click)="cambiarMenu('Sides')">Sides</button></div>
   </div>
-<form>
-  <div id="contenedorProducto-Resumen">
-    <section id="menu">
-      <ul id="mañana">
-        <li *ngFor="let product of obtenerProductosFiltrados()" type="button" (click)="agregandoProductoResumen(product)" class="mañana">
-          <img *ngIf="product.image" [src]="product.image" alt="Imagen del producto"><br>
-          <img src="../../assets/imagenes/default.png" alt="imagneError" (error)="handleError()">
-          <p class="tituloProducto">Product:<strong>{{product.name}}</strong></p>
-          <p class="tituloProducto">Price:{{product.price}}</p>
-          <p class="tituloProducto">Type:{{product.type}}</p>
-        </li>
-      </ul>
-    </section>
-    <section id="resumenVenta">
-      <div id="tituloDelResumen">
-        <h2>Resumen del pedido</h2>
-      </div>
-      <div id="pedidoCliente">
-        <ul id="ulResumen">
-          <label id="nombreCliente">Cliente:</label>
-          <input type="text" name="cliente" placeholder="Nombre del cliente" [(ngModel)]="nombreCliente">
-          <li *ngFor="let product of pedido; let i = index" id="liResumen">
-            <div class="contenedorResumen">
-              <p class="product-precio"> {{product.name}}</p>
-              <p class="product-precio"> {{product.price}}</p>
-              <div class="contenedorResumen">
-                <img class="clear" src="./../../assets/imagenes/papelera.png" (click)="eliminarDelPedido(i)">
-              </div>
-            </div>
+  <form>
+    <div id="contenedorProducto-Resumen">
+      <section id="menu">
+        <ul id="mañana">
+          <li *ngFor="let product of obtenerProductosFiltrados()" type="button"
+            (click)="agregandoProductoResumen(product)" class="mañana">
+            <img [src]="product.image" alt="Imagen del producto"><br>
+            <p class="tituloProducto">Product:<strong>{{product.name}}</strong></p>
+            <p class="tituloProducto">Price:{{product.price}}</p>
+            <p class="tituloProducto">Type:{{product.type}}</p>
           </li>
-          <div>
-            <p id="totalACancelar">Total a cancelar: ${{total}} </p>
-          </div>
         </ul>
-      </div>
-      <div>
-        <button id="envioCocina" type="submit" (click)="enviarACocina()">Enviar pedido al cocinero</button>
-      </div>
-    </section>
-  </div>
-</form>
+      </section>
+      <section id="resumenVenta">
+        <div id="tituloDelResumen">
+          <h2>Resumen del pedido</h2>
+        </div>
+        <div id="pedidoCliente">
+          <ul id="ulResumen">
+            <label id="nombreCliente">Cliente:</label>
+            <input type="text" name="cliente" placeholder="Nombre del cliente" [(ngModel)]="nombreCliente">
+            <li *ngFor="let product of pedido; let i = index" id="liResumen">
+              <div class="contenedorResumen">
+                <p class="product-precio"> {{product.name}}</p>
+                <p class="product-precio"> {{product.price}}</p>
+                <div class="contenedorResumen">
+                  <img class="clear" src="./../../assets/imagenes/papelera.png" (click)="eliminarDelPedido(i)">
+                </div>
+              </div>
+            </li>
+            <div>
+              <p id="totalACancelar">Total a cancelar: ${{total}} </p>
+            </div>
+          </ul>
+        </div>
+        <div>
+          <button id="envioCocina" type="submit" (click)="enviarACocina()">Enviar pedido al cocinero</button>
+        </div>
+      </section>
+    </div>
+  </form>
 </section>
