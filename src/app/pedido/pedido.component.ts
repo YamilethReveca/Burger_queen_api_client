@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ProductResponse } from '../models/productResponse';
 import { Subscription } from 'rxjs';
 import { PedidosService } from '../pedidos.service';
+import { OrderResponse } from '../models/orderResponse';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-pedido',
   templateUrl: './pedido.component.html',
@@ -14,7 +16,16 @@ export class PedidoComponent implements OnInit {
   pedido: ProductResponse[] = [];  // uno por uno para el resumen 
   total: number = 0; // inicializo en 0 el total
   menuSeleccionado: string = 'Desayuno'; // tipo de menú seleccionado
+  nombreCliente: string = '';
 
+    imagenURL = '../../assets/imagenes/default.png';
+  
+    handleError(): void {
+      console.log('Error al cargar la imagen.');
+      this.imagenURL = '../../assets/imagenes/error.png'; // Puedes establecer una imagen de error diferente si lo deseas.
+    }
+
+    
 
   private subscription: Subscription | undefined;
 
@@ -39,8 +50,7 @@ export class PedidoComponent implements OnInit {
 
 
   }
-
-
+  
   // Filtrar los productos según el tipo de menú seleccionado
   obtenerProductosFiltrados(): ProductResponse[] {
 
@@ -57,9 +67,9 @@ export class PedidoComponent implements OnInit {
 
   agregandoProductoResumen(producto: ProductResponse): void {
 
-    this.pedido.push(producto);
+    this.pedido.push(producto);// agrego el producto al resumen
 
-    this.total = this.pedido.reduce((number, productResponse) => number + productResponse.price, 0);
+    this.total = this.pedido.reduce((number, productResponse) => number + productResponse.price, 0); // es el total de cada 
 
   }
 
@@ -76,5 +86,50 @@ export class PedidoComponent implements OnInit {
     }
   }
 
+  
+  enviarACocina(): void {
+    // Verifica si hay productos en el pedido antes de enviar a cocina
+    if (this.pedido.length === 0) {
+      console.warn('No hay productos en el pedido. No se enviará a cocina.');
+      return;
+    }
+  
+    // Obtiene información adicional, como el cliente
+    const cliente = this.nombreCliente;  // Reemplaza con la lógica para obtener el nombre del cliente
+  
+    // Estructura el objeto de pedido utilizando el modelo OrderResponse
+    const pedido: OrderResponse = {
+      userId: 4,  // Reemplaza con el ID del usuario
+      client: cliente,
+      products: this.pedido.map(producto => ({
+        qty: 1,  // Puedes ajustar la cantidad según tus necesidades
+        product: {
+          id: producto.id,  // Ajusta según la estructura real de tu ProductResponse
+          name: producto.name,
+          price: producto.price,
+          image: producto.image,
+          type: producto.type,
+        }
+      })),
+      status: 'pending',
+    };
+  
+    // Llama al servicio para enviar el pedido a cocina
+    this.pedidoService.enviarPedidoACocina(pedido).subscribe(
+      (response) => {
+        console.log('Pedido enviado a cocina:', response);
+  
+        // Realiza cualquier otra acción necesaria después de enviar a cocina
+        // Por ejemplo, limpiar el pedido localmente
+        this.pedido = [];
+        this.total = 0;
+      },
+      (error) => {
+        console.error('Error al enviar a cocina:', error);
+      }
+    );
+  }
+
+  
 
 }

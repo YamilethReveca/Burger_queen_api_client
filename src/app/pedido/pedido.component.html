@@ -6,15 +6,13 @@
     <div><button class="barraMenu" (click)="cambiarMenu('Combos')">Combos</button></div>
     <div><button class="barraMenu" (click)="cambiarMenu('Sides')">Sides</button></div>
   </div>
-
+<form>
   <div id="contenedorProducto-Resumen">
     <section id="menu">
       <ul id="mañana">
         <li *ngFor="let product of obtenerProductosFiltrados()" type="button" (click)="agregandoProductoResumen(product)" class="mañana">
           <img *ngIf="product.image" [src]="product.image" alt="Imagen del producto"><br>
-          <ng-container *ngIf="!product.image">
-            <img src="../../assets/imagenes/default.png" alt="Imagen predeterminada"><br>
-          </ng-container>
+          <img src="../../assets/imagenes/default.png" alt="imagneError" (error)="handleError()">
           <p class="tituloProducto">Product:<strong>{{product.name}}</strong></p>
           <p class="tituloProducto">Price:{{product.price}}</p>
           <p class="tituloProducto">Type:{{product.type}}</p>
@@ -28,7 +26,7 @@
       <div id="pedidoCliente">
         <ul id="ulResumen">
           <label id="nombreCliente">Cliente:</label>
-          <input type="text" placeholder="Nombre del cliente">
+          <input type="text" placeholder="Nombre del cliente" [(ngModel)]="nombreCliente">
           <li *ngFor="let product of pedido; let i = index" id="liResumen">
             <div class="contenedorResumen">
               <p class="product-precio"> {{product.name}}</p>
@@ -44,8 +42,9 @@
         </ul>
       </div>
       <div>
-        <button id="envioCocina" type="submit">Enviar pedido al cocinero</button>
+        <button id="envioCocina" type="submit" (click)="enviarACocina()">Enviar pedido al cocinero</button>
       </div>
     </section>
   </div>
+</form>
 </section>
