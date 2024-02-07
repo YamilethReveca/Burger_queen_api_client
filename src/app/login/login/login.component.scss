@@ -3,24 +3,17 @@
   padding: 0;
 }
 
-// #titulo{
-
-//   width: 50%;
-  
-// }
-
 #contenedor {
   display: flex;
-  justify-content:center;
-  align-items:center;
+  justify-content: center;
+  align-items: center;
   font-family: cursive;
-  // margin-top: 50px;
   font-size: 30px;
-  width: 100%;
+  width: 98%;
   height: 100%;
   border: 5px solid rgb(130, 162, 132);
   background-color: rgb(219, 231, 201);
- 
+
 }
 
 h1 {
@@ -30,7 +23,7 @@ h1 {
   font-size: 50px;
   color: 333333;
   font-family: Helvetica, sans-serif;
-  text-align: right;
+  text-align: center;
 }
 
 h3 {
@@ -77,4 +70,43 @@ button {
 
 button[type="submit"]:disabled {
   background: #ccc;
+}
+
+
+//  telefono 
+@media (max-width: 575px) {
+
+  #contenedor {
+    width: 84%;
+    display: block;
+  }
+
+  h1 {
+    font-size: 25px;
+    border-right: none;
+    margin-right: none;
+
+  }
+
+  h3 {
+    margin-left: 44px;
+    margin-bottom: 18px;
+  }
+
+  #datosUsuario {
+
+    display: block;
+    margin-left: 20px;
+   
+  }
+
+  label,
+  input {
+    width: 264px;
+    font-size: 19px;
+  }
+
+  button{
+    width: 277px;
+  }
 }

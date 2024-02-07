@@ -1,5 +1,5 @@
 h1{
-  width: 100%;
+  width: 99%;
   height: 100px;
   display: flex;
   justify-content: center;
@@ -10,4 +10,15 @@ h1{
   background-color: rgb(41, 75, 41);
   font-weight: bolder;
   color: white;
+}
+
+
+//  telefono 
+@media (max-width: 575px) {
+
+h1{
+  width: 89%;
+  font-size: 26px;
+}
+
 }
