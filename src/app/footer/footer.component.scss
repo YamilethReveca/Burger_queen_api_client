@@ -7,3 +7,10 @@ p {
   color: rgba(50, 49, 49, 0.427);
   background-color: rgb(120, 148, 97);
 }
+
+@media (max-width: 430px) {
+
+  p {
+    font-size: 15px;
+  }
+}
