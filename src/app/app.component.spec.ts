@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { FooterComponent } from './footer/footer.component';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
@@ -9,6 +10,7 @@ describe('AppComponent', () => {
         RouterTestingModule
       ],
       declarations: [
+        FooterComponent,
         AppComponent
       ],
     }).compileComponents();

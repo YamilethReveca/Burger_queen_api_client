@@ -5,7 +5,7 @@ export interface ProductResponse {
   image: string;
   imageFallback?: string;
   type: string;
-  dateEntry: string;
+  dateEntry?: string; // Propiedad opcional
 }
 
 

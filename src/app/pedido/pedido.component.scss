@@ -200,13 +200,13 @@ button:hover {
   display: flex;
 }
 
+//  telefono 
 @media (max-width: 575px) {
 
   * {
     margin: 0;
     padding: 0;
   }
-
 
   .barraMenu {
     width: 52px;
@@ -225,11 +225,11 @@ button:hover {
   }
 
   .tituloProducto {
-    font-size: 8px;
+    font-size: 14px;
   }
 
   h2 {
-    font-size: 12px;
+    font-size: 19px;
   }
 
   #nombreCliente {
@@ -247,7 +247,7 @@ button:hover {
   }
 
   #totalACancelar {
-    font-size: 9px;
+    font-size: 12px;
   }
 
   #ulResumen {
@@ -272,7 +272,7 @@ button:hover {
 
   .contenedorResumen {
     display: inline;
-    font-size: 7px;
+    font-size: 14px;
   }
 
   li {
@@ -289,7 +289,7 @@ button:hover {
   .clear {
     width: 20px;
     height: 30px;
-    margin-left: 305px;
+    margin-left: 263px;
   }
 
   .contenedorResumen p,
@@ -302,9 +302,16 @@ button:hover {
     font-size: 16px;
     display: inline-block;
   }
+  #div-desayuno-tarde{
+    display: flex;
+    width: 88%;
+    height: 30%;
+    justify-content: center;
+    align-items: center;
+  }
 
 }
-
+// tablet
 @media (min-width: 576px) and (max-width: 996px) {
 
   .barraMenu {
@@ -318,9 +325,10 @@ button:hover {
     width: 50%;
     height: 100%;
     display: flex;
-    flex-direction: row;
-    row-gap: 11px;
-    margin-left: 69px;
+    // flex-direction: row;
+    // row-gap: 11px;
+    // margin-left: 69px;    
+    margin-left: 10px;
   }
 
   #resumenVenta {
@@ -335,14 +343,24 @@ button:hover {
   }
 
   .clear{
-    margin-left: 318px;
+    margin-left: 360px;
 
   }
   #totalACancelar{
     font-size: 12px;
+  }  
 
+.productoPrecio{
+    font-size: 17px;
   }
-  
+
+.contenedorResumen{
+  font-size: 17px;
+ }
+
+ .tituloProducto{
+  font-size: 17px;
+ }
 
 
 }
