@@ -112,6 +112,12 @@ h2 {
   border-radius: 5px 5px 0px 0px;
 }
 
+#seleccionProducto {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  display: inline-block;
+}
+
 #envioCocina {
   display: block;
   margin: 0 auto;
@@ -141,7 +147,7 @@ button:hover {
 #ulResumen {
   display: block;
   border: 1px solid black;
-  width: 432px;
+  width: 338px;
   padding: 5px;
   margin-left: 10px;
 }
@@ -169,7 +175,7 @@ button:hover {
 .clear {
   width: 20px;
   height: 30px;
-  margin-left: 387px;
+  margin-left: 342px;
 }
 
 .contenedorResumen p,
@@ -192,4 +198,151 @@ button:hover {
 #contenedorProducto-Resumen {
   width: 100%;
   display: flex;
+}
+
+@media (max-width: 575px) {
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .barraMenu {
+    width: 52px;
+    height: 41px;
+    font-size: 7px;
+  }
+
+  #menu {
+    width: 79%;
+    height: 100%;
+  }
+
+  img {
+    width: 61px;
+    height: 56px;
+  }
+
+  .tituloProducto {
+    font-size: 8px;
+  }
+
+  h2 {
+    font-size: 12px;
+  }
+
+  #nombreCliente {
+    padding: 1px;
+    font-size: 12px;
+  }
+
+  #resumenVenta {
+    width: 90%;
+    margin-top: 30px;
+  }
+
+  #mañana {
+    display: block;
+  }
+
+  #totalACancelar {
+    font-size: 9px;
+  }
+
+  #ulResumen {
+    width: 80%;
+    margin-left: 14px;
+  }
+
+  input {
+    width: 181px;
+    font-size: 9px;
+  }
+
+  #envioCocina {
+    width: 81px;
+    height: 32px;
+    font-size: 10px;
+  }
+
+  .productPrecio {
+    font-size: 6px;
+  }
+
+  .contenedorResumen {
+    display: inline;
+    font-size: 7px;
+  }
+
+  li {
+    width: 100%;
+    margin-left: 18px;
+    margin-bottom: 10px;
+  }
+
+  #contenedorProducto-Resumen {
+    width: 100%;
+    display: inline;
+  }
+
+  .clear {
+    width: 20px;
+    height: 30px;
+    margin-left: 305px;
+  }
+
+  .contenedorResumen p,
+  .clear {
+    display: inline;
+  }
+
+  #seleccionProducto {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    display: inline-block;
+  }
+
+}
+
+@media (min-width: 576px) and (max-width: 996px) {
+
+  .barraMenu {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    width: 131px;
+    height: 44px;
+  }
+
+  #menu {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    row-gap: 11px;
+    margin-left: 69px;
+  }
+
+  #resumenVenta {
+    width: 36%;
+    height: 50%;
+    margin-left: 10px;
+  }
+
+  #ulResumen{
+    width: 311px;
+
+  }
+
+  .clear{
+    margin-left: 318px;
+
+  }
+  #totalACancelar{
+    font-size: 12px;
+
+  }
+  
+
+
 }

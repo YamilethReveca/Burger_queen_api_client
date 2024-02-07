@@ -1,4 +1,37 @@
-## 1.2.0 - 2024-01-31
+## 1.2.0 - 2024-01-31 finalizo el 3er sprint inicio el 4to sprint
+
+### Sprint learnings
+
+en este sprint pude realizar mostrar los productos, filtrar segun el orden del pedido, mostrar lo solicitado por el mesero , borrar y enviar el pedido al cocinero quedando pendiente terminar responsive para tablet, pude hacerlo para telefono y computadora.  Queda pendiente test y la definición de terminado para poder pasar a la siguiente historia de usuario.
+
+### Added
+
+En esta sección especifica las funcionalides que agregaste.
+
+* Renderizar los productos del menú por filtro
+* Mostrar el pedido en el resúmen pedido.
+* Mostar el total de la venta.
+* Eliminar un producto localmente.
+* Enviar menu a la cocina.
+
+### Changed
+
+En esta sección detalla los cambios que hiciste a funcionalides ya existentes.
+
+Darle estilo css según el diseño de figma.
+
+### Fixed
+
+En esta sección describe los _bugs_ solucionados.
+tuve problema con 3 imaganes que venia de burger queen api mock y trate de mil manera poder mostrar una imagen por defecto y no me lo tomaba, termine buscando el repositorio de ssunuco y abri la imagen completamente y copie la ruta y lo cambie en db.json y ya lo mostro
+
+### Removed
+
+En esta sección incluye las funcionalidades eliminadas.
+Ninguna.
+
+_______________________________
+## 1.2.0 - 2024-01-31 termine 2do sprint inicio el 3er sprint
 
 ### Sprint learnings
 
@@ -29,7 +62,7 @@ Ninguna.
 
 _________________________________
 
-## 1.1.0 - 2024-01-24
+## 1.1.0 - 2024-01-24  termine el primer sprint inicio del segundo sprint
 
 ### Sprint learnings
 
@@ -60,7 +93,7 @@ Ninguna.
 En esta sección incluye las funcionalidades eliminadas.
 Ninguna.
 _________________________________
-## 1.0.0 - 2024-01-17
+## 1.0.0 - 2024-01-17 inicio del primer sprint
 
 ### Sprint learnings
 

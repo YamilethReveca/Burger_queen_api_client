@@ -27,7 +27,7 @@
           <ul id="ulResumen">
             <label id="nombreCliente">Cliente:</label>
             <input type="text" name="cliente" placeholder="Nombre del cliente" [(ngModel)]="nombreCliente">
-            <li *ngFor="let product of pedido; let i = index" id="liResumen">
+            <div id="seleccionProducto" *ngFor="let product of pedido; let i = index" id="liResumen">
               <div class="contenedorResumen">
                 <p class="product-precio"> {{product.name}}</p>
                 <p class="product-precio"> {{product.price}}</p>
@@ -35,7 +35,7 @@
                   <img class="clear" src="./../../assets/imagenes/papelera.png" (click)="eliminarDelPedido(i)">
                 </div>
               </div>
-            </li>
+            </div>
             <div>
               <p id="totalACancelar">Total a cancelar: ${{total}} </p>
             </div>
