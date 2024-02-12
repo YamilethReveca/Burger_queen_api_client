@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductResponse } from '../models/productResponse';
-import { Subscription } from 'rxjs';
 import { PedidosService } from '../pedidos.service';
 import { OrderResponse } from '../models/orderResponse';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-pedido',
@@ -36,7 +36,10 @@ export class PedidoComponent implements OnInit {
 
       },
 
-      () => { })
+
+      // () => { }
+
+      )
   }
 
   // Filtrar los productos según el tipo de menú seleccionado
