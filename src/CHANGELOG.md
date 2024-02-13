@@ -1,4 +1,37 @@
-## 1.2.0 - 2024-01-31 finalizo el 3er sprint inicio el 4to sprint
+## 1.3.0 - 2024-02-14 finalizo el 4to sprint inicio el 5to sprint
+
+### Sprint learnings
+
+Finalice la segunda historia de usuario con todos los requerimientos, inicie la tercera historia donde estoy realizando el componente cocina y el modulo cocina, realizando el estilo de como sera esta vista para cuando utilice el endpoint correspondiente pueda mostra cada uno de las ordenes solicitada por el cliente.
+
+### Added
+
+En esta sección especifica las funcionalides que agregaste.
+
+* Creación de componente cocina.
+* Creación de modulo Cocina.
+* Estilo css para el componente cocina.
+* Creación de credenciales para el cocinero.
+
+### Changed
+
+En esta sección detalla los cambios que hiciste a funcionalides ya existentes.
+
+agregue al componente login.ts si la credenciales corresponde al cocinero, ir hacia la vista cocina.
+
+### Fixed
+
+En esta sección describe los _bugs_ solucionados.
+Ninguno.
+
+### Removed
+
+En esta sección incluye las funcionalidades eliminadas.
+Ninguna.
+
+_______________________________
+
+## 1.2.0 - 2024-02-07 finalizo el 3er sprint inicio el 4to sprint
 
 ### Sprint learnings
 

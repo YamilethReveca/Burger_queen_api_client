@@ -1,27 +1,41 @@
-# BurgerQueenApiClient
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
+# Burger Delicias App
 
-## Development server
+Índice
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+[1. Descripción del proyecto](#1-descripcion-del-proyecto)
 
-## Code scaffolding
+[2. Historias de usuario](#2-historias-de-usuario)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+[3. Prototipo de baja y alta fidelidad en Figma](#3-prototipo-de-baja-y-alta-fidelidad-en-figma)
 
-## Build
+[4.Funcionalidades](#4-funcionalidades) 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+[5. Prueba unitarias y Test](#5-prueba-test-y-unitarias)
 
-## Running unit tests
+[6. Tecnologías utilizadas](#6-tecnologias-utilizadas)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+[7.Despliegue en Vercel](#7-despliegue-en-vercel)
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 1-Descripción del proyecto
 
-## Further help
+Burger Delicias App es una aplicación desarrollada en Angular para gestionar pedidos en un restaurante de hamburguesas. Permite a los meseros ingresar pedidos realizados por los clientes y a los cocineros visualizar y gestionar estos pedidos.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Funcionalidades
+
+Login de Mesero: Los meseros pueden iniciar sesión en la aplicación utilizando sus credenciales para acceder a las funciones de generación de pedidos.
+
+Generación de Pedidos: Una vez autenticados, los meseros pueden ingresar los pedidos realizados por los clientes, especificando los elementos del menú solicitados.
+
+Visualización de Órdenes (Cocineros): Los cocineros pueden iniciar sesión en la aplicación utilizando sus credenciales para acceder a la lista de pedidos pendientes y en proceso.
+
+<!-- ![imagen de cine](/src/assets/img/ART-3.3-CINE-300x200.jpg) -->
+
+## 6-Tecnologías Utilizadas
+Angular: Framework de desarrollo frontend utilizado para la construcción de la interfaz de usuario.
+
+HTML/CSS: Lenguajes de marcado y estilos para la presentación y diseño de la aplicación.
+
+JavaScript/TypeScript: Lenguajes de programación utilizados para la lógica y funcionalidades de la aplicación.
+

@@ -1,0 +1,27 @@
+*{
+margin: 0;
+padding: 0;
+}
+
+.verPedidos{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif; 
+  background-color: rgb(219, 231, 201);
+  // display: grid;
+  // grid-template-columns: 50% 50%;
+
+}
+
+#cadaPedido{
+  width: 60%;
+  height: 200px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(120, 148, 97);
+  border-radius: 10px;
+  border: 5px solid black;
+}
