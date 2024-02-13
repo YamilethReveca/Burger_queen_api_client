@@ -42,24 +42,31 @@ export class LoginComponent implements OnInit, OnDestroy  {
 
     this.subscription = this.authService.login(email, clave).subscribe(
       (response: LoginResponse) => {
-        
+        console.log(response);
           this.authService.setIsLoggedInVar=true;
           localStorage.setItem("accessToken", response.accessToken); // Almacena un token simulado
-          this.router.navigate(['pedidos']);
-       
-      },
-      (error: any) => {
-        console.error('Error de autenticación:', error);
-
-        if (error && error.error) {
-          this.errorMensaje = error.error;
-        } else {
-          this.errorMensaje = 'Error de autenticación';
+          localStorage.setItem("userRole", response.user.role); // Almacena el rol del usuario
+         
+          const role = response.user.role;
+          
+          if (role === 'chef') {
+            this.router.navigate(['cocina']);
+          } else {
+            this.router.navigate(['pedidos']);
+          }
+        },
+        (error: any) => {
+          console.error('Error de autenticación:', error);
+    
+          if (error && error.error) {
+            this.errorMensaje = error.error;
+          } else {
+            this.errorMensaje = 'Error de autenticación';
+          }
+    
+          console.log('Valor de errorMensaje:', this.errorMensaje);
         }
-
-        console.log('Valor de errorMensaje:', this.errorMensaje);
-      }
-    );
+      );
   }
 
   ngOnDestroy(): void {

@@ -79,18 +79,20 @@ button[type="submit"]:disabled {
   #contenedor {
     width: 84%;
     display: block;
+    margin: auto;
   }
 
   h1 {
-    font-size: 25px;
+    font-size: 17px;
     border-right: none;
     margin-right: none;
+    margin: auto;
 
   }
 
   h3 {
-    margin-left: 44px;
-    margin-bottom: 18px;
+    margin-left: 10px;
+   margin-bottom: 15px;
   }
 
   #datosUsuario {
@@ -102,11 +104,11 @@ button[type="submit"]:disabled {
 
   label,
   input {
-    width: 264px;
+    width: 178px;
     font-size: 19px;
   }
 
   button{
-    width: 277px;
+    width: 193px;
   }
 }
