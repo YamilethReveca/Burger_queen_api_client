@@ -24,9 +24,10 @@
           <h2>Resumen del pedido</h2>
         </div>
         <div id="pedidoCliente">
-          <ul id="ulResumen">
+          <section id="ulResumen">
             <label id="nombreCliente">Cliente:</label>
-            <input type="text" name="cliente" placeholder="Nombre del cliente" [(ngModel)]="nombreCliente">
+            <input type="text" name="cliente" placeholder="Nombre del cliente" [(ngModel)]="nombreCliente" required>
+            <span *ngIf="!nombreCliente" style="color: red;">Obligatorio</span>
             <div id="seleccionProducto" *ngFor="let product of pedido; let i = index" id="liResumen">
               <div class="contenedorResumen">
                 <p class="product-precio"> {{product.name}}</p>
@@ -39,10 +40,10 @@
             <div>
               <p id="totalACancelar">Total a cancelar: ${{total}} </p>
             </div>
-          </ul>
+          </section>
         </div>
         <div>
-          <button id="envioCocina" type="submit" (click)="enviarACocina()">Enviar pedido al cocinero</button>
+          <button id="envioCocina" type="submit" (click)="enviarACocina()" [disabled]="!nombreCliente">Enviar pedido al cocinero</button>
         </div>
       </section>
     </div>

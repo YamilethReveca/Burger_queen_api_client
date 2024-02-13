@@ -33,4 +33,10 @@ export class AuthService {
   logout(): void {
     this.isLoggedInVar = false;
   }
+
+  //cambio de role
+  getUserRole(): string {
+    const userRole = localStorage.getItem('userRole');
+    return userRole || 'usuario';
+  }
 }

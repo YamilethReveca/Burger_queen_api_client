@@ -11,6 +11,7 @@
   width: 50%;
   height: 100%;
   flex-direction: row;
+  margin-left: 20px;
 }
 
 #div-desayuno-tarde {
@@ -147,7 +148,7 @@ button:hover {
 #ulResumen {
   display: block;
   border: 1px solid black;
-  width: 338px;
+  width: 325px;
   padding: 5px;
   margin-left: 10px;
 }
@@ -256,7 +257,7 @@ button:hover {
   }
 
   input {
-    width: 181px;
+    width: 121px;
     font-size: 9px;
   }
 
@@ -324,11 +325,8 @@ button:hover {
   #menu {
     width: 50%;
     height: 100%;
-    display: flex;
-    // flex-direction: row;
-    // row-gap: 11px;
-    // margin-left: 69px;    
-    margin-left: 10px;
+    display: flex;       
+    margin-left: 17px;
   }
 
   #resumenVenta {

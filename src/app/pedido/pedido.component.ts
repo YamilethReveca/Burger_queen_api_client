@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , OnDestroy} from '@angular/core';
 import { ProductResponse } from '../models/productResponse';
 import { PedidosService } from '../pedidos.service';
 import { OrderResponse } from '../models/orderResponse';
@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './pedido.component.html',
   styleUrls: ['./pedido.component.scss']
 })
-export class PedidoComponent implements OnInit {
+export class PedidoComponent implements OnInit, OnDestroy {
 
 
   productos: ProductResponse[] = []; // los productos completos 20
@@ -119,6 +119,12 @@ export class PedidoComponent implements OnInit {
         console.error('Error al enviar a cocina:', error);
       }
     );
+  }
+
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 
 
