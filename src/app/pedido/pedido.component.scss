@@ -258,7 +258,8 @@ button:hover {
 
   input {
     width: 121px;
-    font-size: 9px;
+    
+    
   }
 
   #envioCocina {
@@ -281,6 +282,8 @@ button:hover {
     margin-left: 18px;
     margin-bottom: 10px;
   }
+
+  
 
   #contenedorProducto-Resumen {
     width: 100%;
@@ -336,9 +339,16 @@ button:hover {
   }
 
   #ulResumen{
-    width: 311px;
+    width: 255px;
 
   }
+
+  input{
+    width: 106px;
+    font-size: 9px;
+  }
+
+  
 
   .clear{
     margin-left: 360px;
@@ -359,6 +369,14 @@ button:hover {
  .tituloProducto{
   font-size: 17px;
  }
+
+
+
+ 
+ span{
+  font-size: 10px;
+}
+
 
 
 }
