@@ -1,27 +1,88 @@
-*{
-margin: 0;
-padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.verPedidos{
-  width: 100%;
-  height: 100%;
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  text-align: center;
+  background-color: rgb(41, 75, 41);
+  font-weight: bolder;
+  color: white;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-content: center;
-  font-family: Arial, Helvetica, sans-serif; 
-  background-color: rgb(219, 231, 201);
-  // display: grid;
-  // grid-template-columns: 50% 50%;
-
 }
 
-#cadaPedido{
-  width: 60%;
-  height: 200px;
+.verPedidos {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(120, 148, 97);
+  background-color: rgb(219, 231, 201);
+  margin-top: 23px;
+}
+
+#cadaPedido {
+  width: 60%;
+  height: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  background-color: rgba(120, 148, 97, 0);
   border-radius: 10px;
   border: 5px solid black;
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  background-color: rgb(41, 75, 41);
+}
+
+.producto {
+  border: 5px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  width: 90px;
+  height: 70px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+p {
+
+  font-family: Arial, Helvetica, sans-serif;
+  display: block;
+  font-size: 19px;
+  margin-bottom: 2px;
+  margin-left: 10px;
+}
+
+
+//  telefono 
+@media (max-width: 575px) {}
+
+
+// tablet
+@media (min-width: 576px) and (max-width: 996px) {
+
+  h1 {
+    width: 90%;
+  }
+
+  .verPedidos {
+
+    width: 90%;
+  }
+
+
 }
