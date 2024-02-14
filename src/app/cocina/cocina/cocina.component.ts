@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-cocina',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CocinaComponent implements OnInit {
 
-  constructor() { }
+  ordenes: any[] = []; // Variable para almacenar las órdenes de cocina
+
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
+    
+    this.obtenerOrdenesCocina();
   }
 
+  obtenerOrdenesCocina(): void {
+    this.authService.obtenerOrdenesCocina().subscribe(
+      (ordenes: any[]) => {
+        this.ordenes = ordenes;
+      },
+      (error) => {
+        console.error('Error al obtener las órdenes de cocina:', error);
+      }
+    );
+  }
 }
+
+

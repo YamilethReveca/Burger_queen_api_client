@@ -1,27 +1,76 @@
-*{
-margin: 0;
-padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.verPedidos{
-  width: 100%;
-  height: 100%;
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  text-align: center;
+  background-color: rgb(41, 75, 41);
+  font-weight: bolder;
+  color: white;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-content: center;
-  font-family: Arial, Helvetica, sans-serif; 
+}
+
+.verPedidos {
+  width: 100%;
+  height: 100%;
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
   background-color: rgb(219, 231, 201);
-  // display: grid;
-  // grid-template-columns: 50% 50%;
+  margin-top: 23px;
+
 
 }
 
-#cadaPedido{
+#cadaPedido {
   width: 60%;
   height: 200px;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
   background-color: rgb(120, 148, 97);
   border-radius: 10px;
   border: 5px solid black;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+p{
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+
+//  telefono 
+@media (max-width: 575px) {
+
+
+
+}
+
+
+// tablet
+@media (min-width: 576px) and (max-width: 996px) {
+
+  h1{
+    width: 90%;
+  }
+
+  .verPedidos{
+
+    width: 90%;
+  }
+
+
 }
