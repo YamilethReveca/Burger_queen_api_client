@@ -9,6 +9,8 @@
       <p>ID de Pedido: {{ orden.id }}</p>
       <p>Estado: {{ orden.status }}</p>      
     </div>
-    <button (click)="marcarComoListo(orden.id)">Listo</button>
+    <button (click)="marcarComoListo(orden.id)">Listo     
+      <img id="listo" *ngIf="orden.status === 'delivering'" src="./../.././../assets/imagenes/cocina-listo-removebg-preview.png" alt="Estado Procesando">    
+    </button>
   </div>
 </section>
