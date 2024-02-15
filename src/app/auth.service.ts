@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient , HttpHeaders} from '@angular/common/http';// Importar el HttpClient e inyectarlo en el constructor
 import { Observable } from 'rxjs';
 import { LoginResponse } from './models/loginResponse';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -54,8 +55,23 @@ export class AuthService {
   }
 
 
-  // // Obtener una orden específica
-  // obtenerOrden(idOrden: number): Observable<any> {
-  //   return this.http.get<any>(`${this.apiUrl}/orders/${ordenId}`);
-  // }
+  marcarOrdenComoListo(idOrden: number): Observable<any> {
+    const authToken = localStorage.getItem('accessToken');
+    
+    if (!authToken) {
+      console.error('No se encontró el token de autenticación.');
+      return of(undefined);
+    }
+  
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${authToken}`
+      })
+    };
+  
+    // Aquí puedes ajustar la URL según tu API
+    return this.http.patch<any>(`${this.apiUrl}/orders/${idOrden}`, { status: 'delivering' }, httpOptions);
+  }
+
+
 }
