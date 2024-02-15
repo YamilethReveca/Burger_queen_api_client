@@ -39,7 +39,7 @@ h1 {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  margin-bottom: 20px;
+  margin-bottom: 55px;
   background-color: rgb(41, 75, 41);
 }
 
@@ -50,21 +50,29 @@ h1 {
   width: 100%;
 }
 
-img {
+img, #listo {
   display: block;
   margin: 0 auto;
   width: 90px;
   height: 70px;
-  margin-top: 5px;
+  margin-top:15px;
   margin-bottom: 5px;
 }
+
+
+#listo{
+  margin-top: -49px;
+  margin-bottom: 5px;
+  margin-left: 447px;
+}
+
 
 p {
 
   font-family: Arial, Helvetica, sans-serif;
   display: block;
   font-size: 19px;
-  margin-bottom: 2px;
+  margin-bottom: 10px;
   margin-left: 10px;
 }
 
@@ -72,6 +80,7 @@ button{
 
   height: 40px;
   background-color: rgb(173, 188, 159);
+  font-size: 25px;
 }
 
 
