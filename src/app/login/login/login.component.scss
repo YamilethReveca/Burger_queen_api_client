@@ -9,10 +9,12 @@
   align-items: center;
   font-family: cursive;
   font-size: 30px;
-  width: 98%;
-  height: 100%;
-  border: 5px solid rgb(130, 162, 132);
-  background-color: rgb(219, 231, 201);
+  width: 100%;
+  height: 349px;
+  margin-top: 147px;
+  margin-bottom: 116px;
+  border: 5px solid rgb(41, 75, 41);
+  background-color: rgb(120, 148, 97);
 
 }
 
@@ -36,15 +38,19 @@ h3 {
 #datosUsuario {
   font-size: 30px;
   font-family: Arial, Helvetica, sans-serif;
+  height: 349px;
+  margin-top: 110px;
+  margin-left: 2px;
 }
 
 label,
 input {
   width: 300px;
   height: 30px;
-  padding: 5px;
-  margin-bottom: 10px;
+  padding: 10px;
+  margin-bottom: 12px;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
 }
 
 button {
@@ -59,6 +65,7 @@ button {
   border-radius: 5px;
   font-weight: bolder;
   color: white;
+  margin-top: 41px;
 }
 
 
@@ -91,15 +98,18 @@ button[type="submit"]:disabled {
   }
 
   h3 {
-    margin-left: 10px;
-   margin-bottom: 15px;
+    
+    margin-bottom: 15px;
+    margin-left: 75px;
   }
 
   #datosUsuario {
 
     display: block;
-    margin-left: 20px;
-   
+    // margin-left: 20px;
+    margin-top: 10px;
+    margin-left: 61px;
+
   }
 
   label,
@@ -108,7 +118,28 @@ button[type="submit"]:disabled {
     font-size: 19px;
   }
 
-  button{
+  button {
     width: 193px;
+    margin-top: 10px;
   }
+
+
+}
+
+// tablet
+
+@media (min-width: 576px) and (max-width: 996px) {
+
+  // #contenedor {
+  //   width: 100%;
+  //   margin-top: 147px;
+  //   margin-bottom: 236px;
+  // }
+
+  // #datosUsuario {
+  //   height: 349px;
+
+  // }
+
+
 }

@@ -1,7 +1,8 @@
 * {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
+
 
 h1 {
   font-family: Arial, Helvetica, sans-serif;
@@ -25,7 +26,6 @@ h1 {
   flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgb(219, 231, 201);
-  margin-top: 23px;
 }
 
 #cadaPedido {
@@ -33,12 +33,13 @@ h1 {
   height: auto;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
-  background-color: rgba(120, 148, 97, 0);
+  background-color: rgb(120, 148, 97);
   border-radius: 10px;
   border: 5px solid black;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  margin-top: 26px;
   margin-bottom: 55px;
   background-color: rgb(41, 75, 41);
 }
@@ -48,19 +49,21 @@ h1 {
   display: flex;
   flex-direction: column;
   width: 100%;
+  background-color: rgb(120, 148, 97);
 }
 
-img, #listo {
+img,
+#listo {
   display: block;
   margin: 0 auto;
   width: 90px;
   height: 70px;
-  margin-top:15px;
+  margin-top: 15px;
   margin-bottom: 5px;
 }
 
 
-#listo{
+#listo {
   margin-top: -49px;
   margin-bottom: 5px;
   margin-left: 447px;
@@ -76,7 +79,7 @@ p {
   margin-left: 10px;
 }
 
-button{
+button {
 
   height: 40px;
   background-color: rgb(173, 188, 159);
@@ -100,5 +103,8 @@ button{
     width: 90%;
   }
 
+  #listo {
+    margin-left: 172px;
+  }
 
 }
