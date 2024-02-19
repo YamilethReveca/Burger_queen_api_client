@@ -105,7 +105,6 @@ export class PedidoComponent implements OnInit, OnDestroy {
       status: 'pending',
     };
 
-
     // Llama al servicio para enviar el pedido a cocina
     this.pedidoService.enviarPedidoACocina(pedido).subscribe(
       (response) => {
@@ -114,6 +113,7 @@ export class PedidoComponent implements OnInit, OnDestroy {
         this.pedido = [];
         this.total = 0;
         this.nombreCliente = "";
+        this.menuSeleccionado = 'Ninguno';
       },
       (error) => {
         console.error('Error al enviar a cocina:', error);
@@ -126,7 +126,5 @@ export class PedidoComponent implements OnInit, OnDestroy {
       this.subscription.unsubscribe();
     }
   }
-
-
 
 }
