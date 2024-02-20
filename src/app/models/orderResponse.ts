@@ -5,4 +5,5 @@ export interface OrderResponse {
     client: string;
     products: OrderProduct[];
     status: string;
+    dateEntry?: string;
 }

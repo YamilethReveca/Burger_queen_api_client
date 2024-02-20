@@ -1,4 +1,4 @@
-import { Component, OnInit , OnDestroy} from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProductResponse } from '../models/productResponse';
 import { PedidosService } from '../pedidos.service';
 import { OrderResponse } from '../models/orderResponse';
@@ -39,7 +39,7 @@ export class PedidoComponent implements OnInit, OnDestroy {
 
       // () => { }
 
-      )
+    )
   }
 
   // Filtrar los productos según el tipo de menú seleccionado
@@ -88,6 +88,12 @@ export class PedidoComponent implements OnInit, OnDestroy {
     // Obtiene información adicional, como el cliente
     const cliente = this.nombreCliente;  // Reemplaza con la lógica para obtener el nombre del cliente
 
+    const currentDate = new Date();
+    const formattedDate = `${currentDate.getFullYear()}-${(currentDate.getMonth() + 1).toString().padStart(2, '0')}-${currentDate.getDate().toString().padStart(2, '0')} ${currentDate.getHours().toString().padStart(2, '0')}:${currentDate.getMinutes().toString().padStart(2, '0')}:${currentDate.getSeconds().toString().padStart(2, '0')}`;
+
+
+
+
     // Estructura el objeto de pedido utilizando el modelo OrderResponse
     const pedido: OrderResponse = {
       userId: 4,  // Reemplaza con el ID del usuario
@@ -103,6 +109,7 @@ export class PedidoComponent implements OnInit, OnDestroy {
         }
       })),
       status: 'pending',
+      dateEntry: formattedDate,
     };
 
     // Llama al servicio para enviar el pedido a cocina
