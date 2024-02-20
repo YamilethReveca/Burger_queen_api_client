@@ -15,7 +15,7 @@ export class CocinaComponent implements OnInit {
   constructor(private authService: AuthService, private http: HttpClient) { }
 
   ngOnInit(): void {
-    
+
     this.obtenerOrdenesCocina();
   }
 
@@ -57,22 +57,22 @@ export class CocinaComponent implements OnInit {
 
 
   // Función para calcular el tiempo transcurrido
-calcularTiempoTranscurrido(horaPedido: string, horaFinalizacion: string): string {
-  // Parsear las horas en objetos de fecha
-  const fechaPedido = new Date(horaPedido);
-  const fechaFinalizacion = new Date(horaFinalizacion);
+  calcularTiempoTranscurrido(horaPedido: string, horaFinalizacion: string): string {
+    // Parsear las horas en objetos de fecha
+    const fechaPedido = new Date(horaPedido);
+    const fechaFinalizacion = new Date(horaFinalizacion);
 
-  // Calcular la diferencia de tiempo en milisegundos
-  const diferenciaTiempo = fechaFinalizacion.getTime() - fechaPedido.getTime();
+    // Calcular la diferencia de tiempo en milisegundos
+    const diferenciaTiempo = fechaFinalizacion.getTime() - fechaPedido.getTime();
 
-  // Calcular los minutos y segundos
-  const minutos = Math.floor(diferenciaTiempo / 60000); // 1 minuto = 60000 milisegundos
-  const segundos = Math.floor((diferenciaTiempo % 60000) / 1000); // 1 segundo = 1000 milisegundos
+    // Calcular los minutos y segundos
+    const minutos = Math.floor(diferenciaTiempo / 60000); // 1 minuto = 60000 milisegundos
+    const segundos = Math.floor((diferenciaTiempo % 60000) / 1000); // 1 segundo = 1000 milisegundos
 
-  // Formatear la salida
-  return `${minutos} minutos ${segundos} segundos`;
-}
-  
+    // Formatear la salida
+    return `${minutos} minutos ${segundos} segundos`;
+  }
+
 }
 
 
