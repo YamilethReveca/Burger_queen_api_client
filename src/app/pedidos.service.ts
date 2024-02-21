@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ProductResponse} from './models/productResponse';
+import { ProductResponse } from './models/productResponse';
 import { Observable } from 'rxjs';  // Agrega esta importación
 import { OrderResponse } from './models/orderResponse';
 
@@ -23,8 +23,8 @@ export class PedidosService {
 
     //console.log('El componente PedidoComponent se ha inicializado.');
 
-    return this.http.get<ProductResponse[]>("http://localhost:8080/products", {headers})
-    
+    return this.http.get<ProductResponse[]>("http://localhost:8080/products", { headers })
+
   }
 
   enviarPedidoACocina(pedido: any): Observable<any> {
@@ -33,7 +33,7 @@ export class PedidosService {
       Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
     });
     //console.log('enviando a cocina pedido:')
-    return this.http.post<OrderResponse>("http://localhost:8080/orders",pedido, { headers });
+    return this.http.post<OrderResponse>("http://localhost:8080/orders", pedido, { headers });
   }
 
 
@@ -45,7 +45,7 @@ export class PedidosService {
   //     'Content-Type': 'application/json',
   //     Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
   //   });
-  
+
   //   return this.http.delete(`http://localhost:8080/orders/${orderId}`, { headers });
   // }
 }

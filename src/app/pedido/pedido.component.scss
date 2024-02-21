@@ -258,8 +258,8 @@ button:hover {
 
   input {
     width: 121px;
-    
-    
+
+
   }
 
   #envioCocina {
@@ -283,7 +283,7 @@ button:hover {
     margin-bottom: 10px;
   }
 
-  
+
 
   #contenedorProducto-Resumen {
     width: 100%;
@@ -306,7 +306,8 @@ button:hover {
     font-size: 16px;
     display: inline-block;
   }
-  #div-desayuno-tarde{
+
+  #div-desayuno-tarde {
     display: flex;
     width: 88%;
     height: 30%;
@@ -315,6 +316,7 @@ button:hover {
   }
 
 }
+
 // tablet
 @media (min-width: 576px) and (max-width: 996px) {
 
@@ -328,7 +330,7 @@ button:hover {
   #menu {
     width: 50%;
     height: 100%;
-    display: flex;       
+    display: flex;
     margin-left: 17px;
   }
 
@@ -338,44 +340,45 @@ button:hover {
     margin-left: 10px;
   }
 
-  #ulResumen{
+  #ulResumen {
     width: 255px;
 
   }
 
-  input{
+  input {
     width: 106px;
     font-size: 9px;
   }
 
-  
 
-  .clear{
+
+  .clear {
     margin-left: 360px;
 
   }
-  #totalACancelar{
-    font-size: 12px;
-  }  
 
-.productoPrecio{
+  #totalACancelar {
+    font-size: 12px;
+  }
+
+  .productoPrecio {
     font-size: 17px;
   }
 
-.contenedorResumen{
-  font-size: 17px;
- }
+  .contenedorResumen {
+    font-size: 17px;
+  }
 
- .tituloProducto{
-  font-size: 17px;
- }
+  .tituloProducto {
+    font-size: 17px;
+  }
 
 
 
- 
- span{
-  font-size: 10px;
-}
+
+  span {
+    font-size: 10px;
+  }
 
 
 
