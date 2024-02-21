@@ -1,3 +1,35 @@
+## 1.4.0 - 2024-02-21 finalizo el 5to sprint inicio el 6to sprint
+
+### Sprint learnings
+En este sprint pude realizar la 3era historia de usuario la cual se obtiene los pedidos de la cocina segun el orden en que llega, se cambia el estado del pedido de pending a delivering y quedando pendiente el tiempo en que tardo el pedido en estar listo, desde que llego la orden hasta que cambió el estado.
+
+### Added
+
+En esta sección especifica las funcionalides que agregaste.
+
+* Obtuve los pedidos.
+* Cambio de estado de pending a delivering
+* Mostrar la hora desde que llegó el pedido y la hora en la cual cambio el estado.
+* Responsive para tablet, movil y computadora.
+
+### Changed
+
+En esta sección detalla los cambios que hiciste a funcionalides ya existentes.
+
+En el componente pedidos cuando envio la orden no se ve el menú, anteriormente quedaba el resumen del pediod como al inicio pero quedaba el menu visualmente. Pero no fue un cambio de funcionalidad.
+
+### Fixed
+
+En esta sección describe los _bugs_ solucionados.
+Ninguno.
+
+### Removed
+
+En esta sección incluye las funcionalidades eliminadas.
+Ninguna.
+
+______________________________
+
 ## 1.3.0 - 2024-02-14 finalizo el 4to sprint inicio el 5to sprint
 
 ### Sprint learnings
