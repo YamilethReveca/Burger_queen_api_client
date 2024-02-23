@@ -24,11 +24,20 @@ export class CocinaComponent implements OnInit {
       (ordenes: any[]) => {
         // Iterar sobre las órdenes para agregar la hora del pedido y la hora de lista
         this.ordenes = ordenes.map(orden => {
+          const horaPedido = this.formatDate(new Date(orden.dateEntry));
+          const horaFinalizacion = orden.status && orden.status === 'delivering' ? this.formatDate(new Date()) : '';
+          const tiempoTranscurrido = this.calcularTiempoTranscurrido(horaPedido, horaFinalizacion);
           return {
             ...orden,
-            horaPedido: this.formatDate(new Date(orden.dateEntry)),
-            horaLista: orden.status === 'delivering' ? this.formatDate(new Date()) : null
+            horaPedido: horaPedido,
+            horaLista: horaFinalizacion,
+            tiempoTranscurrido: tiempoTranscurrido
           };
+        });
+  
+        // Calcular el tiempo transcurrido para cada orden
+        this.ordenes.forEach(orden => {
+          orden.tiempoTranscurrido = this.calcularTiempoTranscurrido(orden.horaPedido, orden.horaLista);
         });
       },
       (error) => {
@@ -37,8 +46,8 @@ export class CocinaComponent implements OnInit {
     );
   }
 
-
   marcarComoListo(idOrden: number): void {
+    const horaPedido = this.obtenerHoraPedido(idOrden);
     this.authService.marcarOrdenComoListo(idOrden).subscribe(
       () => {
         // Si la solicitud se realizó correctamente, recargar las órdenes
@@ -55,21 +64,21 @@ export class CocinaComponent implements OnInit {
     return date.toLocaleString();
   }
 
+  private obtenerHoraPedido(idOrden: number): string {
+    const orden = this.ordenes.find(ord => ord.id === idOrden);
+    return orden ? orden.horaPedido : null;
+  }
 
-  // Función para calcular el tiempo transcurrido
   calcularTiempoTranscurrido(horaPedido: string, horaFinalizacion: string): string {
-    // Parsear las horas en objetos de fecha
+    if (!horaPedido || !horaFinalizacion) return 'Tiempo no disponible';
+    
     const fechaPedido = new Date(horaPedido);
     const fechaFinalizacion = new Date(horaFinalizacion);
 
-    // Calcular la diferencia de tiempo en milisegundos
     const diferenciaTiempo = fechaFinalizacion.getTime() - fechaPedido.getTime();
+    const minutos = Math.floor(diferenciaTiempo / 60000);
+    const segundos = Math.floor((diferenciaTiempo % 60000) / 1000);
 
-    // Calcular los minutos y segundos
-    const minutos = Math.floor(diferenciaTiempo / 60000); // 1 minuto = 60000 milisegundos
-    const segundos = Math.floor((diferenciaTiempo % 60000) / 1000); // 1 segundo = 1000 milisegundos
-
-    // Formatear la salida
     return `${minutos} minutos ${segundos} segundos`;
   }
 
