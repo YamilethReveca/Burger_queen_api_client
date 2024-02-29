@@ -26,7 +26,8 @@
   list-style: none;
 }
 
-.barraMenu {
+.barraMenu,
+#cocinaConfirmaListo {
   margin-top: 10px;
   margin-bottom: 10px;
   font-family: Arial, Helvetica, sans-serif;
@@ -40,6 +41,11 @@
   color: white;
   font-weight: bolder;
 }
+
+#cocinaConfirmaListo {
+  margin-left: 20px;
+}
+
 
 ul {
   display: grid;
@@ -98,6 +104,9 @@ input {
 #pediodoCliente {
   list-style: none;
   grid-template-columns: 1fr;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 h2 {
@@ -169,20 +178,28 @@ button:hover {
   display: block;
 }
 
-.productPrecio {
-  display: inline-flex;
+.product {
+  display: flex;
+  width: 60%;
+}
+
+.precio {
+
+  width: 20%;
+  text-align: right;
 }
 
 .clear {
   width: 20px;
   height: 30px;
-  margin-left: 342px;
+  display: inline-block;
+
 }
 
-.contenedorResumen p,
-.clear {
-  display: inline;
-}
+// .clear {
+//   display: inline;
+
+// }
 
 #totalACancelar {
   height: 20px;
@@ -199,6 +216,27 @@ button:hover {
 #contenedorProducto-Resumen {
   width: 100%;
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#pedidoCliente {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedorResumen {
+  display: flex;
+}
+
+//  p {
+//   width: 30%;
+// }
+
+.contenedorResumenInterno {
+  width: 20%;
+  text-align: right;
 }
 
 //  telefono 
@@ -209,7 +247,8 @@ button:hover {
     padding: 0;
   }
 
-  .barraMenu {
+  .barraMenu,
+  #cocinaConfirmaListo {
     width: 52px;
     height: 41px;
     font-size: 7px;
@@ -268,13 +307,29 @@ button:hover {
     font-size: 10px;
   }
 
-  .productPrecio {
+  .product {
     font-size: 6px;
+    width: 60%;
+  }
+
+  .precio {
+
+    width: 20%;
+    text-align: right;
   }
 
   .contenedorResumen {
-    display: inline;
+    display: flex;
     font-size: 14px;
+  }
+
+  .contenedorResumen p {
+    width: 30%;
+  }
+
+  .contenedorResumenInterno {
+    width: 20%;
+    text-align: right;
   }
 
   li {
@@ -287,18 +342,20 @@ button:hover {
 
   #contenedorProducto-Resumen {
     width: 100%;
-    display: inline;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .clear {
     width: 20px;
     height: 30px;
-    margin-left: 263px;
+    display: inline-block;
+
   }
 
-  .contenedorResumen p,
   .clear {
-    display: inline;
+    display: inline-block;
   }
 
   #seleccionProducto {
@@ -315,12 +372,20 @@ button:hover {
     align-items: center;
   }
 
+  #pedidoCliente {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
 }
 
 // tablet
 @media (min-width: 576px) and (max-width: 996px) {
 
-  .barraMenu {
+  .barraMenu,
+  #cocinaConfirmaListo {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     width: 131px;
@@ -361,25 +426,44 @@ button:hover {
     font-size: 12px;
   }
 
-  .productoPrecio {
+  .product {
     font-size: 17px;
+    width: 60%;
+  }
+
+  .precio {
+
+    width: 20%;
+    text-align: right;
   }
 
   .contenedorResumen {
     font-size: 17px;
+    display: flex;
+  }
+
+  .contenedorResumen p {
+    width: 30%;
+  }
+
+  .contenedorResumenInterno {
+    width: 20%;
+    text-align: right;
   }
 
   .tituloProducto {
     font-size: 17px;
   }
 
-
-
-
   span {
     font-size: 10px;
   }
 
+  #pedidoCliente {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
 
 }

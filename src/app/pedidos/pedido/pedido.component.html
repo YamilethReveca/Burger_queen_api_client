@@ -5,6 +5,7 @@
     <div><button class="barraMenu" (click)="cambiarMenu('Beverages')">Bebidas-Postre-Café</button></div>
     <div><button class="barraMenu" (click)="cambiarMenu('Combos')">Combos</button></div>
     <div><button class="barraMenu" (click)="cambiarMenu('Sides')">Sides</button></div>
+    <button id="cocinaConfirmaListo" (click)="verPedidosListo()">Ver pedidos listo</button>
   </div>
   <form>
     <div id="contenedorProducto-Resumen">
@@ -30,9 +31,9 @@
             <span *ngIf="!nombreCliente" style="color: red;">Obligatorio</span>
             <div id="seleccionProducto" *ngFor="let product of pedido; let i = index" id="liResumen">
               <div class="contenedorResumen">
-                <p class="product-precio"> {{product.name}}</p>
-                <p class="product-precio"> {{product.price}}</p>
-                <div class="contenedorResumen">
+                <p class="product"> {{product.name}}</p>
+                <p class="precio"> {{product.price}}</p>
+                <div class="contenedorResumenInterno">
                   <img class="clear" src="./../../assets/imagenes/papelera.png" (click)="eliminarDelPedido(i)">
                 </div>
               </div>
