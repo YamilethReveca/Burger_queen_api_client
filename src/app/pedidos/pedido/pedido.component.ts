@@ -1,8 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ProductResponse } from '../models/productResponse';
-import { PedidosService } from '../pedidos.service';
-import { OrderResponse } from '../models/orderResponse';
+import { ProductResponse } from '../../models/productResponse';
+import { PedidosService } from '../../pedidos.service';
+import { OrderResponse } from '../../models/orderResponse';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pedido',
@@ -21,7 +22,7 @@ export class PedidoComponent implements OnInit, OnDestroy {
 
   private subscription: Subscription | undefined;
 
-  constructor(private pedidoService: PedidosService) { }
+  constructor(private pedidoService: PedidosService, private router: Router) { }
 
 
   ngOnInit(): void {
@@ -126,6 +127,13 @@ export class PedidoComponent implements OnInit, OnDestroy {
         console.error('Error al enviar a cocina:', error);
       }
     );
+  }
+
+  verPedidosListo() {
+    this.router.navigate(['pedidos','/pedidosListos']);
+    console.log("navegar a:" );
+
+
   }
 
   ngOnDestroy(): void {

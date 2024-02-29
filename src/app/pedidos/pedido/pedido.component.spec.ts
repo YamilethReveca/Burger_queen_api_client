@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { PedidoComponent } from './pedido.component';
-import { PedidosService } from '../pedidos.service';
+import { PedidosService } from '../../pedidos.service';
 import { of, throwError } from 'rxjs';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { FormsModule } from '@angular/forms';

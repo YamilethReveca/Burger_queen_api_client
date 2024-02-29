@@ -24,8 +24,11 @@ export class CocinaComponent implements OnInit {
       (ordenes: any[]) => {
         // Iterar sobre las órdenes para agregar la hora del pedido y la hora de lista
         this.ordenes = ordenes.map(orden => {
-          const horaPedido = this.formatDate(new Date(orden.dateEntry));
-          const horaFinalizacion = orden.status && orden.status === 'delivering' ? this.formatDate(new Date()) : '';
+          let horaPedido = this.formatDate(new Date(orden.dateEntry));
+          let horaFinalizacion = orden.status && orden.status === 'delivering' ? this.formatDate(new Date()) : '';
+          horaPedido= horaPedido.length > 0 ? this.parsearStringFecha(horaPedido) : horaPedido;
+          horaFinalizacion= horaFinalizacion.length > 0 ? this.parsearStringFecha(horaFinalizacion) : horaFinalizacion;
+          
           const tiempoTranscurrido = this.calcularTiempoTranscurrido(horaPedido, horaFinalizacion);
           return {
             ...orden,
@@ -33,12 +36,7 @@ export class CocinaComponent implements OnInit {
             horaLista: horaFinalizacion,
             tiempoTranscurrido: tiempoTranscurrido
           };
-        });
-  
-        // Calcular el tiempo transcurrido para cada orden
-        this.ordenes.forEach(orden => {
-          orden.tiempoTranscurrido = this.calcularTiempoTranscurrido(orden.horaPedido, orden.horaLista);
-        });
+        });      
       },
       (error) => {
         console.error('Error al obtener las órdenes de cocina:', error);
@@ -81,6 +79,27 @@ export class CocinaComponent implements OnInit {
 
     return `${minutos} minutos ${segundos} segundos`;
   }
+
+parsearStringFecha(date:string){
+
+  // van a llegar asi: "19/2/2024, 18:15:04"
+  // debe devolvese asi: "1995-12-17T03:24:00"
+
+  const fechaSeparada= date.split(", ");
+  const fechaUno= fechaSeparada[0].split("/");
+  fechaUno[0]= fechaUno[0].length > 1 ? fechaUno[0] : "0" + fechaUno[0];
+  fechaUno[1]= fechaUno[1].length> 1 ? fechaUno[1] : "0" + fechaUno[1];
+
+
+  const fechaFormateada= fechaUno.reverse().join("-");
+  const fechaFinal= fechaFormateada+ "T"+ fechaSeparada[1];
+
+  return fechaFinal;
+
+  //["19", "02", "2024"]
+  
+}
+
 
 }
 
