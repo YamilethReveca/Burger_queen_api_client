@@ -6,4 +6,5 @@ export interface OrderResponse {
     products: OrderProduct[];
     status: string;
     dateEntry?: string;
+    id?: number
 }

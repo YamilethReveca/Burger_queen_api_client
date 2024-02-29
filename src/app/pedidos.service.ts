@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { ProductResponse } from './models/productResponse';
 import { Observable } from 'rxjs';  // Agrega esta importación
 import { OrderResponse } from './models/orderResponse';
@@ -34,6 +34,23 @@ export class PedidosService {
     });
     //console.log('enviando a cocina pedido:')
     return this.http.post<OrderResponse>("http://localhost:8080/orders", pedido, { headers });
+  }
+
+
+
+  obtenerPedidosDeliveringCocina(status: string) {
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+    });
+
+
+    // Configuración de los parámetros de la solicitud
+    let params = new HttpParams().set('status', status);
+    //console.log('enviando a cocina pedido:')
+    return this.http.get<OrderResponse[]>("http://localhost:8080/orders", { headers, params });
+
+    
   }
 
 
