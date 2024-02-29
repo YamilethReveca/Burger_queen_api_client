@@ -130,10 +130,8 @@ export class PedidoComponent implements OnInit, OnDestroy {
   }
 
   verPedidosListo() {
-    this.router.navigate(['pedidos','/pedidosListos']);
-    console.log("navegar a:" );
-
-
+    this.router.navigate(['pedidos','listo']);
+       
   }
 
   ngOnDestroy(): void {
