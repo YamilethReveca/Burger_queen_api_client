@@ -1,22 +1,17 @@
-<h1>Pedidos Listo confirmación en cocina</h1>
+<h1>Pedidos del dia a entregar</h1>
 <section class="verPedidos">
-  <div *ngFor="let orden of pedidosListoCocina" id="cadaPedido">
-    <div *ngFor="let productoListo of orden.products" class="producto">
+  <ul *ngFor="let orden of pedidosListoCocina" id="cadaPedido">
+    <li *ngFor="let productoListo of orden.products" class="producto">
       <div id="numeroPedido">Pedido N° {{orden.id}}</div>
       <img [src]="productoListo.product.image" alt="Imagen del producto">
-      <p>Nombre cliente: {{ orden.client }}</p>
-      <p>Producto: {{ productoListo.product.name }}</p>
-      <p>Precio: $ {{ productoListo.product.price }}</p>
-      <p>ID de Pedido: {{ productoListo.product.id }}</p>
-      <p>Estado: {{ orden.status }}</p>
-      <!-- <p>Hora de Pedido: {{ orden.horaPedido }}</p>
-    <p>Hora de Lista: {{ orden.horaLista }}</p>
-    <p>Tiempo transcurrido: {{ orden.tiempoTranscurrido }}</p> -->
-
-    </div>
-    <!-- <button (click)="marcarComoListo(orden.id)">Confirmar pedido
-      <img id="listo" *ngIf="orden.status === 'delivering'"
-        src="../../../assets/imagenes/cocina-listo-removebg-preview.png" alt="Estado Procesando">
-    </button> -->
-  </div>
+      <div id="descricionOrden">
+        <p>Nombre cliente: {{ orden.client }}</p>
+        <p>Producto: {{ productoListo.product.name }}</p>
+        <p>Precio: $ {{ productoListo.product.price }}</p>
+        <p>ID de Pedido: {{ productoListo.product.id }}</p>
+        <p>Estado: {{ orden.status }}</p>
+      </div>
+    </li>
+    <button class="entregado">Entregado al cliente</button>
+  </ul>
 </section>

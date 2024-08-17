@@ -14,9 +14,11 @@
           <li *ngFor="let product of obtenerProductosFiltrados()" type="button"
             (click)="agregandoProductoResumen(product)" class="mañana">
             <img [src]="product.image" alt="Imagen del producto"><br>
-            <p class="tituloProducto">Product:<strong>{{product.name}}</strong></p>
-            <p class="tituloProducto">Price:{{product.price}}</p>
-            <p class="tituloProducto">Type:{{product.type}}</p>
+            <div>
+              <p class="tituloProducto">Product:<strong>{{product.name}}</strong></p>
+              <p class="tituloProducto">Price:{{product.price}}</p>
+              <p class="tituloProducto">Type:{{product.type}}</p>
+            </div>
           </li>
         </ul>
       </section>

@@ -4,7 +4,7 @@
 }
 
 #contenedor {
-  background-color: rgb(219, 231, 201);
+  background-color: rgb(232, 117, 26);
 }
 
 #menu {
@@ -33,7 +33,7 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   justify-content: center;
-  background-color: rgb(80, 98, 58);
+  background-color: blueviolet;
   border-radius: 10px;
   width: 131px;
   height: 44px;
@@ -41,6 +41,12 @@
   color: white;
   font-weight: bolder;
 }
+
+
+// .barraMenu{
+//   transform: translateY(-10px);
+
+// }
 
 #cocinaConfirmaListo {
   margin-left: 20px;
@@ -59,25 +65,31 @@ li {
   border-radius: 10px;
   border: 5px solid black;
   width: 90%;
+  height: 300px;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(120, 148, 97);
+  font-family:cursive;
+  font-size: 20px;
+  background-color: blueviolet;
   padding: 10px;
   margin-left: 10px;
   margin-right: 30px;
 }
 
 img {
-  width: 90px;
-  height: 70px;
   display: block;
   margin: 0 auto;
+  border: 1px solid black;
+  width: 100%;
+  height: 50%;
+
+
+
 }
 
 .tituloProducto {
   display: flex;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
+  font-family:cursive;
+  font-size: 16px;
 }
 
 #resumenVenta {
@@ -91,6 +103,7 @@ img {
   margin-left: 10px;
   border: 5px solid black;
   box-sizing: border-box;
+  background-color: rgb(229, 194, 135);
 }
 
 #nombreCliente {
@@ -113,7 +126,7 @@ h2 {
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   font-weight: bolder;
-  background-color: rgb(41, 75, 41);
+  background-color: blueviolet;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -135,7 +148,7 @@ h2 {
   height: 44px;
   justify-content: center;
   align-items: center;
-  background-color: rgb(41, 75, 41);
+  background-color: blueviolet;
   border-radius: 10px;
   color: white;
   font-weight: bolder;
@@ -154,12 +167,21 @@ button:hover {
   border: 2px solid rgb(80, 98, 58);
 }
 
+#cocinaConfirmaListo:hover {
+  background: rgb(219, 231, 201);
+  border: 2px solid rgb(80, 98, 58);
+  font-weight: bolder;
+}
+
+.barraMenu:hover, #cocinaConfirmaListo:hover{
+  transform: translateY(-10px);
+}
+
 #ulResumen {
   display: block;
   border: 1px solid black;
   width: 90%;
   padding: 5px;
-  
 }
 
 #mañana {
@@ -193,17 +215,14 @@ button:hover {
   width: 20px;
   height: 30px;
   display: inline-block;
-
+  border: none;
 }
 
-// .clear {
-//   display: inline;
 
-// }
 
 #totalACancelar {
-  height: 20px;
-  background: rgb(80, 98, 58);
+  height: 20px;    
+  background-color: blueviolet;  
   border: 2px solid black;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
@@ -231,9 +250,7 @@ button:hover {
   display: flex;
 }
 
-//  p {
-//   width: 30%;
-// }
+
 
 .contenedorResumenInterno {
   width: 20%;

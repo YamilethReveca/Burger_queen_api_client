@@ -8,7 +8,7 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
   text-align: center;
-  background-color: rgb(41, 75, 41);
+  background-color:blueviolet;
   font-weight: bolder;
   color: white;
   width: 100%;
@@ -26,7 +26,7 @@ h1 {
   display: flex;
   flex-direction: column;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: rgb(219, 231, 201);
+  // background-color: rgb(232, 117, 26);
 }
 
 #cadaPedido {
@@ -55,7 +55,7 @@ h1 {
   align-items: center;
   justify-content: center;
   border-bottom: 5px solid black;
-  background-color: rgb(173, 188, 159);
+  background-color: blueviolet;
   padding: 15px;
   
 }
@@ -64,7 +64,7 @@ h1 {
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: rgb(120, 148, 97);
+  background-color: rgb(229, 194, 135);
 }
 
 img,
@@ -96,7 +96,7 @@ p {
 button {
 
   height: 40px;
-  background-color: rgb(41, 75, 41);
+  background-color: blueviolet;
   font-size: 25px;
   color: white;
   font-weight: bolder;
