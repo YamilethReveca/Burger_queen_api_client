@@ -1,15 +1,19 @@
 h1 {
   width: 100%;
-  height: 130px;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 50px;
-  background-color: rgb(41, 75, 41);
+  font-family: cursive;
+  font-size: 30px;
+  border-bottom: 3px solid  blueviolet;
   font-weight: bolder;
-  color: white;
-  margin: 0px;
+  color: black;
+  background-image: url("../../assets/imagenes/comida2-removebg-preview.png");
+  background-repeat: no-repeat;  
+  background-size: cover; /* Esto hace que la imagen se ajuste al tamaño del contenedor */
+  background-position: center; /* Esto centra la imagen en el contenedor */
+ 
 }
 
 
