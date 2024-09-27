@@ -9,11 +9,11 @@
   align-items: center;
   font-family: cursive;
   font-size: 30px;
-  width: 100%;
   height: 349px;
-  margin-top: 20px; 
+  margin-top: 20px;
   border: 5px solid blueviolet;
   background-color: rgb(229, 194, 135);
+  padding: 1em;
 
 }
 
@@ -72,7 +72,7 @@ button {
   border-radius: 5px;
   font-weight: bolder;
   color: white;
- 
+
 }
 
 
@@ -87,7 +87,7 @@ button[type="submit"]:disabled {
 }
 
 
-//  telefono 
+//  telefono
 @media (max-width: 575px) {
 
   #contenedor {
@@ -172,14 +172,7 @@ button[type="submit"]:disabled {
     width: 193px;
     margin-top: 1px;
   }
-
-
-
-
 }
-
-
-
 
 
 // tablet
