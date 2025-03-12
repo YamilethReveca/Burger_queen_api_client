@@ -1,32 +1,8 @@
-/* estilo aplicado a todos los componentes */
-:root{
-  --color-primario: rgb(31, 125, 83);
-  --color-secundario:rgb(255, 255, 255); 
-  --color-terciario: rgb(37, 95, 56);
-  --color-button:rgb(39, 57, 28);
-  --color-fuente:#ffffff;
-  --font-family: 'Montserrat', sans-serif;
-  --font-size: 20px;
-  --color-border: rgb(37, 37, 37);
-}
-
-
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html{
-  height: 100%;
-}
-
-.main{
-  height: calc(100% - 200px);
-}
+/* You can add global styles to this file, and also import other style files */
 
 body{
+  background-color: rgb(232, 117, 26);
   height: 100%;
-  font-family: var(--font-family);
-  font-size: var(--font-size);
 }
+
+
