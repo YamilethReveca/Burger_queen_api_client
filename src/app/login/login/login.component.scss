@@ -1,201 +1,131 @@
-* {
-  margin: 0;
-  padding: 0;
+@import url(../../../styles.scss);
+
+
+.content{
+  width: 100%;
+  height: 100%;
+  background-image: url(../../../assets/imagenes/body.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;  
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 #contenedor {
+  width: 20%;
+  height: 330px;
+  padding: 35px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: cursive;
-  font-size: 30px;
-  width: 100%;
-  height: 349px;
-  margin-top: 20px; 
-  border: 5px solid blueviolet;
-  background-color: rgb(229, 194, 135);
-
-}
-
-h1 {
-  border-right: 1px solid black;
-  margin-right: 42px;
-  padding: 5px;
-  font-size: 50px;
-  color: 333333;
-  font-family: cursive;
-  text-align: center;
-}
-
-h3 {
-  font-family: cursive;
-  font-size: 20px;
-  margin-left: 158px;
-  color: white;
-
-}
-img{
-width: 120px;
-height: 100px;
-display: block;
-margin: 0 auto;
-
-}
-
-#datosUsuario {
-  font-size: 30px;
-  font-family: Arial, Helvetica, sans-serif;
-  height: 349px;
-  margin-top: 110px;
-  margin-left: 2px;
-}
-
-label,
-input {
-  width: 300px;
-  height: 30px;
-  padding: 10px;
-  margin-bottom: 12px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-}
-
-button {
-  width: 310px;
-  height: 50px;
-  background-color: blueviolet;
-  padding: 4px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 2px solid violet;
-  font-size: 30px;
-  border-radius: 5px;
-  font-weight: bolder;
-  color: white;
+  margin: 10px auto; 
+  background-color: var(--color-terciario);
+  border-radius: 20px;
+  color: var(--color-fuente);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
  
 }
 
 
+label {
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  max-width: 300px;
+  height: 40px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--color-secundario);
+  box-shadow: 0px 0px 5px var(--color-secundario);
+}
+
+button {
+  width: 50%;
+  max-width: 250px;
+  height: 50px;
+  background-color: var(--color-button);
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  display: block;
+  margin: 0 auto;
+}
+
+button:hover {
+  background-color: var(--color-secundario);
+  color: #333;
+}
+
 .error {
   color: red;
   font-size: 14px;
+  text-align: left;
+  margin-bottom: 10px;
 }
 
 
-button[type="submit"]:disabled {
-  background: #ccc;
+
+
+
+/* 2️⃣ Tablet (entre 576px y 996px) */
+@media (max-width: 996px) {
+
+
+  .content {
+    background-size: contain; 
+  }
+
+  #contenedor {
+    width: 40%;    
+  }
+
 }
 
 
-//  telefono 
+
+/* 3️⃣ Móvil (≤ 575px) */
 @media (max-width: 575px) {
 
+
+  .content {
+    background-size: cover; /* Mantiene la cobertura en móviles */
+    background-position: top center; /* Ajusta el enfoque */
+  }
+    
   #contenedor {
-    width: 84%;
-    height: auto;
-    display: block;
-    margin: auto;
+    width: 70%;    
   }
 
-  h1 {
-    font-size: 17px;
-    border-right: none;
-    margin-right: none;
-    margin: auto;
-
+  label{
+    font-size: 16px;
   }
 
-  h3 {
-
-    margin-bottom: 15px;
-    margin-left: 75px;
-  }
-
-  #datosUsuario {
-    margin-top: 2px;
-    margin-left: 33px;
-
-  }
-
-  label,
   input {
-    width: 178px;
-    font-size: 19px;
+    max-width: 100%;
   }
 
   button {
-    width: 193px;
-    margin-top: 10px;
+    max-width: 100%;
   }
-
-
 }
 
-
-
-
-@media only screen and (max-width: 280px) {
-
-
-  #contenedor {
-    width: 90%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-
-  }
-
-  #datosUsuario {
-    display: block;
-
-  }
-
-  h1 {
-    width: 100%;
-    font-size: 19px;
-  }
-
-  h3 {
-    margin-bottom: 15px;
-    margin-left: 19px;
-    font-size: 15px;
-  }
-
-
-  label,
-  input {
-    width: 80%;
-    font-size: 15px;
-  }
-
-  button {
-    width: 193px;
-    margin-top: 1px;
-  }
-
-
-
-
-}
-
-
-
-
-
-// tablet
-
-@media (min-width: 576px) and (max-width: 996px) {
-
-  // #contenedor {
-  //   width: 100%;
-  //   margin-top: 147px;
-  //   margin-bottom: 236px;
-  // }
-
-  // #datosUsuario {
-  //   height: 349px;
-
-  // }
-
-
-}
