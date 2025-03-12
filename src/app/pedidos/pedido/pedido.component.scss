@@ -1,457 +1,125 @@
-* {
-  margin: 0;
-  padding: 0;
-}
+@import url(../../../styles.scss);
 
-#contenedor {
-  background-color: rgb(232, 117, 26);
-}
+/* Estilos generales */
 
-#menu {
-  width: 50%;
-  height: 100%;
-  flex-direction: row;
-  margin-left: 20px;
-}
-
-#div-desayuno-tarde {
+.contenedor {
   display: flex;
   width: 100%;
-  height: 30%;
-  justify-content: center;
-  align-items: center;
+  height: 100%;
+  background-color: var(--color-terciario);
 }
 
-#liResumen {
-  list-style: none;
+.opciones {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-terciario);
 }
 
-.barraMenu,
-#cocinaConfirmaListo {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  justify-content: center;
-  background-color: blueviolet;
-  border-radius: 10px;
-  width: 131px;
+.opcion,
+.pedidosTerminados {
+  width: 140px;
   height: 44px;
-  margin-left: 2px;
-  color: white;
+  color: var(--color-fuente);
   font-weight: bolder;
+  background-color: var(--color-primario);
+  border-radius: 5px;
+  box-shadow: 5px 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-#cocinaConfirmaListo {
-  margin-left: 20px;
+
+// desde aqui vamos probando
+form {
+  width: 100%;
+  margin-top: 18px;
+}
+
+.contenedor__contenido {
+  width: 100%;
+  display: flex;
 }
 
 ul {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  row-gap: 17px;
-  width: 100%;
+  width: 50%;
   height: 100%;
+  box-sizing: content-box;
+  display: grid;
+  gap: 10px;
+  list-style: none;
 }
 
 li {
+  width: 203px;
+  height: 157px;
   border-radius: 10px;
-  border: 5px solid black;
-  width: 90%;
-  height: 300px;
-  box-sizing: border-box;
-  font-family:cursive;
-  font-size: 20px;
-  background-color: blueviolet;
-  padding: 10px;
-  margin-left: 10px;
-  margin-right: 30px;
+  border: 2px solid var(--color-border);
+  background-color: var(--color-primario);
+  padding: 3px;
+  text-align: center;
 }
 
 img {
+  width: 80px;
+  height: 71px;
   display: block;
   margin: 0 auto;
-  border: 1px solid black;
+}
+
+.descripcionProductos {
+  color: var(--color-fuente);
+  font-size: 14px;
+}
+
+// aca nuevo
+
+.orden {
+  width: 50%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  color: var(--color-fuente);
+  border: 2px solid var(--color-border);
+  background-color: var(--color-primario);
+  border-radius: 5px;  
+  padding: 13px;
+}
+
+.titulo {
   width: 100%;
-  height: 50%;
+  text-align: center;
 }
 
-.tituloProducto {
+h3 {
+  height: 41px;
+  border-bottom: 2px solid var(--color-border);
+  background-color: var(--color-primario);
+}
+
+input{
+  height: 30px;
+}
+
+.agregar {
   display: flex;
-  font-family:cursive;
-  font-size: 16px;
-}
-
-#resumenVenta {
-  width: 36%;
-  height: 50%;
-  font-family: Arial, Helvetica, sans-serif;
-  color: black;
-  border-radius: 10px;
-  border: 1px solid black;
-  margin-top: 20px;
-  margin-left: 10px;
-  border: 5px solid black;
-  box-sizing: border-box;
-  background-color: rgb(229, 194, 135);
-}
-
-#nombreCliente {
-  padding: 10px;
-}
-
-input {
-  margin-bottom: 10px;
-}
-
-#pediodoCliente {
-  list-style: none;
-  grid-template-columns: 1fr;
-  display: flex;
+  flex-direction: row; /* Alinear elementos en fila */
+  justify-content: space-between; /* Distribuye los elementos uniformemente */
   align-items: center;
-  justify-content: center;
-}
-
-h2 {
-  font-family: Arial, Helvetica, sans-serif;
-  color: white;
-  font-weight: bolder;
-  background-color: blueviolet;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 5px;
-  height: 50px;
-  border-radius: 5px 5px 0px 0px;
-}
-
-#seleccionProducto {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  display: inline-block;
-}
-
-#envioCocina {
-  display: block;
-  margin: 0 auto;
-  width: 131px;
-  height: 44px;
-  justify-content: center;
-  align-items: center;
-  background-color: blueviolet;
-  border-radius: 10px;
-  color: white;
-  font-weight: bolder;
-  margin-bottom: 5px;
-  margin-top: 10px;
-}
-
-#envioCocina:hover {
-  background: rgb(219, 231, 201);
-  border: 2px solid rgb(80, 98, 58);
-  font-weight: bolder;
-}
-
-button:hover {
-  background: rgb(219, 231, 201);
-  border: 2px solid rgb(80, 98, 58);
-}
-
-#cocinaConfirmaListo:hover {
-  background: rgb(219, 231, 201);
-  border: 2px solid rgb(80, 98, 58);
-  font-weight: bolder;
-}
-
-.barraMenu:hover, #cocinaConfirmaListo:hover{
-  transform: translateY(-10px);
-}
-
-#ulResumen {
-  display: block;
-  border: 1px solid black;
-  width: 90%;
+  width: 100%;
   padding: 5px;
+  border-bottom: 1px solid var(--color-border); /* Opcional: Separador entre productos */
 }
 
-#mañana {
-  list-style: none;
-  display: grid;
-  justify-items: end;
-  margin-top: 25px;
-  margin-bottom: 20px;
-}
-
-.mañana {
-  grid-gap: 10px;
-}
-
-#tituloDelResumen {
-  display: block;
-}
-
-.product {
+.agregado__contenido {
   display: flex;
-  width: 60%;
-}
-
-.precio {
-  width: 20%;
-  text-align: right;
+  align-items: center; /* Alinea texto e ícono verticalmente */
+  gap: 10px; /* Espacio entre elementos */
 }
 
 .clear {
-  width: 20px;
-  height: 30px;
-  display: inline-block;
-  border: none;
-}
-
-#totalACancelar {
+  width: 20px; /* Tamaño ajustado para mayor visibilidad */
   height: 20px;
-  background-color: blueviolet;
-  border: 2px solid black;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  margin-top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
-#contenedorProducto-Resumen {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#pedidoCliente {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.contenedorResumen {
-  display: flex;
-}
-
-.contenedorResumenInterno {
-  width: 20%;
-  text-align: right;
-}
-
-//  telefono
-@media (max-width: 575px) {
-
-  * {
-    margin: 0;
-    padding: 0;
-  }
-
-  .barraMenu,
-  #cocinaConfirmaListo {
-    width: 52px;
-    height: 41px;
-    font-size: 7px;
-  }
-
-  #menu {
-    width: 79%;
-    height: 100%;
-  }
-
-  img {
-    width: 61px;
-    height: 56px;
-  }
-
-  .tituloProducto {
-    font-size: 14px;
-  }
-
-  h2 {
-    font-size: 19px;
-  }
-
-  #nombreCliente {
-    padding: 1px;
-    font-size: 12px;
-  }
-
-  #resumenVenta {
-    width: 90%;
-    margin-top: 30px;
-  }
-
-  #mañana {
-    display: block;
-  }
-
-  #totalACancelar {
-    font-size: 12px;
-    color: white;
-  }
-
-  #ulResumen {
-    width: 80%;
-  }
-
-  input {
-    width: 121px;
-  }
-
-  #envioCocina {
-    width: 81px;
-    height: 32px;
-    font-size: 10px;
-  }
-
-  .product {
-    font-size: 6px;
-    width: 60%;
-  }
-
-  .precio {
-    width: 20%;
-    text-align: right;
-  }
-
-  .contenedorResumen {
-    display: flex;
-    font-size: 14px;
-  }
-
-  .contenedorResumen p {
-    width: 30%;
-  }
-
-  .contenedorResumenInterno {
-    width: 20%;
-    text-align: right;
-  }
-
-  li {
-    width: 100%;
-    margin-left: 18px;
-    margin-bottom: 10px;
-  }
-
-  #contenedorProducto-Resumen {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .clear {
-    width: 20px;
-    height: 30px;
-    display: inline-block;
-  }
-
-
-  #seleccionProducto {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    display: inline-block;
-  }
-
-  #div-desayuno-tarde {
-    display: flex;
-    width: 88%;
-    height: 30%;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #pedidoCliente {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-}
-
-// tablet
-@media (min-width: 576px) and (max-width: 996px) {
-
-  .barraMenu,
-  #cocinaConfirmaListo {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    width: 131px;
-    height: 44px;
-  }
-
-  #menu {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    margin-left: 17px;
-  }
-
-  #resumenVenta {
-    width: 36%;
-    height: 50%;
-    margin-left: 10px;
-  }
-
-  #ulResumen {
-    width: 255px;
-  }
-
-  input {
-    width: 106px;
-    font-size: 9px;
-  }
-
-  .clear {
-    margin-left: 360px;
-  }
-
-  #totalACancelar {
-    font-size: 12px;
-    color: white;
-  }
-
-  .product {
-    font-size: 17px;
-    width: 60%;
-  }
-
-  .precio {
-    width: 20%;
-    text-align: right;
-  }
-
-  .contenedorResumen {
-    font-size: 17px;
-    display: flex;
-  }
-
-  .contenedorResumen p {
-    width: 30%;
-  }
-
-  .contenedorResumenInterno {
-    width: 20%;
-    text-align: right;
-  }
-
-  .tituloProducto {
-    font-size: 17px;
-  }
-
-  span {
-    font-size: 10px;
-  }
-
-  #pedidoCliente {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
+  cursor: pointer;
 }

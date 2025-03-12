@@ -32,7 +32,7 @@
 
 
 label {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   display: block;
   margin-bottom: 5px;
@@ -90,9 +90,8 @@ button:hover {
 /* 2️⃣ Tablet (entre 576px y 996px) */
 @media (max-width: 996px) {
 
-
   .content {
-    background-size: contain; 
+     background-size: cover; 
   }
 
   #contenedor {
@@ -109,7 +108,7 @@ button:hover {
 
   .content {
     background-size: cover; /* Mantiene la cobertura en móviles */
-    background-position: top center; /* Ajusta el enfoque */
+    // background-position: top center; /* Ajusta el enfoque */
   }
     
   #contenedor {

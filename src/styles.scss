@@ -1,12 +1,12 @@
 /* estilo aplicado a todos los componentes */
 :root{
   --color-primario: rgb(31, 125, 83);
-  --color-secundario:rgb(255, 255, 255);
-  --color-button:rgb(39, 57, 28);
+  --color-secundario:rgb(255, 255, 255); 
   --color-terciario: rgb(37, 95, 56);
+  --color-button:rgb(39, 57, 28);
   --color-fuente:#ffffff;
   --font-family: 'Montserrat', sans-serif;
-  --font-size: 17px;
+  --font-size: 20px;
   --color-border: rgb(37, 37, 37);
 }
 
@@ -24,8 +24,6 @@ html{
 .main{
   height: calc(100% - 200px);
 }
-
-
 
 body{
   height: 100%;

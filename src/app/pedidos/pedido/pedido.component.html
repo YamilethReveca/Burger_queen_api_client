@@ -1,55 +1,60 @@
-<section id="contenedor">
-  <div id="div-desayuno-tarde">
-    <div><button class="barraMenu" (click)="cambiarMenu('Breakfast')">Desayuno</button></div>
-    <div><button class="barraMenu" (click)="cambiarMenu('Lunch')">Almuerzo</button></div>
-    <div><button class="barraMenu" (click)="cambiarMenu('Beverages')">Bebidas-Postre-Café</button></div>
-    <div><button class="barraMenu" (click)="cambiarMenu('Combos')">Combos</button></div>
-    <div><button class="barraMenu" (click)="cambiarMenu('Sides')">Sides</button></div>
-    <button id="cocinaConfirmaListo" (click)="verPedidosListo()">Ver pedidos listo</button>
+<section class="contenedor">
+  <div class="opciones">
+    <button class="opcion" (click)="cambiarMenu('Breakfast')">Desayuno</button>
+    <button class="opcion" (click)="cambiarMenu('Lunch')">Almuerzo</button>
+    <button class="opcion" (click)="cambiarMenu('Beverages')">Bebidas-Postre-Café</button>
+    <button class="opcion" (click)="cambiarMenu('Combos')">Combos</button>
+    <button class="opcion" (click)="cambiarMenu('Sides')">Sides</button>
+    <button class="pedidosTerminados" (click)="verPedidosListo()">Ver pedidos listo</button>
   </div>
+
+
   <form>
-    <div id="contenedorProducto-Resumen">
-      <section id="menu">
-        <ul id="mañana">
-          <li *ngFor="let product of obtenerProductosFiltrados()" type="button"
-            (click)="agregandoProductoResumen(product)" class="mañana">
-            <img [src]="product.image" alt="Imagen del producto"><br>
-            <div>
-              <p class="tituloProducto">Product:<strong>{{product.name}}</strong></p>
-              <p class="tituloProducto">Price:{{product.price}}</p>
-              <p class="tituloProducto">Type:{{product.type}}</p>
-            </div>
-          </li>
-        </ul>
-      </section>
-      <section id="resumenVenta">
-        <div id="tituloDelResumen">
-          <h2>Resumen del pedido</h2>
+
+    <section class="contenedor__contenido">
+
+      <ul>
+        <li *ngFor="let product of obtenerProductosFiltrados()" type="button"
+          (click)="agregandoProductoResumen(product)">
+          <img [src]="product.image" alt="Imagen del producto">
+          <div class="descripcionProductos">
+            <p>{{product.name}}</p>
+            <p>{{product.price}}</p>
+            <p>{{product.type}}</p>
+          </div>
+        </li>
+      </ul>
+
+
+      <section class="orden">
+        <div class="titulo">
+          <h3>Orden</h3>
         </div>
-        <div id="pedidoCliente">
-          <section id="ulResumen">
-            <label id="nombreCliente">Cliente:</label>
-            <input type="text" name="cliente" placeholder="Nombre del cliente" [(ngModel)]="nombreCliente" required>
-            <span *ngIf="!nombreCliente" style="color: red;">Obligatorio</span>
-            <div id="seleccionProducto" *ngFor="let product of pedido; let i = index" id="liResumen">
-              <div class="contenedorResumen">
-                <p class="product"> {{product.name}}</p>
-                <p class="precio"> {{product.price}}</p>
-                <div class="contenedorResumenInterno">
-                  <img class="clear" src="./../../assets/imagenes/papelera.png" (click)="eliminarDelPedido(i)">
-                </div>
-              </div>
+        <label>Cliente:</label>
+        <input type="text" name="cliente" placeholder="Nombre del cliente" [(ngModel)]="nombreCliente" required>
+        <span *ngIf="!nombreCliente" style="color: red;">Obligatorio</span>
+        <div *ngFor="let product of pedido; let i = index" class="agregar">
+          <div class="agregado__contenido">
+            <p> {{product.name}}</p>
+            <p> {{product.price}}</p>
+            <div class="contenedorResumenInterno">
+              <img class="clear" src="./../../assets/imagenes/papelera.png" (click)="eliminarDelPedido(i)">
             </div>
-            <div>
-              <p id="totalACancelar">Total a cancelar: ${{total}} </p>
-            </div>
-          </section>
+          </div>
         </div>
         <div>
-          <button id="envioCocina" type="submit" (click)="enviarACocina()" [disabled]="!nombreCliente">Enviar pedido al
-            cocinero</button>
+          <div id="totalACancelar">Total a cancelar: ${{total}} </div>
         </div>
+
+        <div>
+          <button id="envioCocina" type="submit" (click)="enviarACocina()" [disabled]="!nombreCliente">Enviar</button>
+        </div>
+
       </section>
-    </div>
+
+    </section>
+
+
   </form>
+
 </section>
