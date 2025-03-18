@@ -14,7 +14,7 @@ export class PedidoComponent implements OnInit, OnDestroy {
 
 
   productos: ProductResponse[] = []; // los productos completos 20
-  pedido: ProductResponse[] = [];  // uno por uno para el resumen 
+  pedido: ProductResponse[] = [];  // uno por uno para el resumen
   total: number = 0; // inicializo en 0 el total
   menuSeleccionado: string = 'Desayuno'; // tipo de menú seleccionado
   nombreCliente: string = '';
@@ -61,7 +61,7 @@ export class PedidoComponent implements OnInit, OnDestroy {
 
     this.pedido.push(producto);// agrego el producto al resumen
 
-    this.total = this.pedido.reduce((number, productResponse) => number + productResponse.price, 0); // es el total de cada 
+    this.total = this.pedido.reduce((number, productResponse) => number + productResponse.price, 0); // es el total de cada
 
   }
 
@@ -131,7 +131,7 @@ export class PedidoComponent implements OnInit, OnDestroy {
 
   verPedidosListo() {
     this.router.navigate(['pedidos','listo']);
-       
+
   }
 
   ngOnDestroy(): void {

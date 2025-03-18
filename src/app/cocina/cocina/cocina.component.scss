@@ -1,78 +1,64 @@
-* {
-  margin: 0px;
-  padding: 0px;
-}
-
+@import url(../../../styles.scss);
 
 h1 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 30px;
-  text-align: center;
-  background-color:blueviolet;
-  font-weight: bolder;
-  color: white;
   width: 100%;
   height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  background-color:var(--color-terciario);
+  color: var(--color-fuente);
+
 }
 
 .verPedidos {
   width: 100%;
   height: 100%;
-  justify-content: center;
-  align-items: center;
   display: flex;
   flex-direction: column;
-  font-family: Arial, Helvetica, sans-serif;
-  // background-color: rgb(232, 117, 26);
+
 }
 
-#cadaPedido {
-  width: 60%;
+.pedido__contenido {
+  width: 30%;
   height: auto;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  background-color: rgb(120, 148, 97);
-  border-radius: 10px;
-  border: 5px solid black;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  margin-top: 26px;
-  margin-bottom: 55px;
-  background-color: rgb(41, 75, 41);
+  font-size: 15px;
+  background-color: var(--color-terciario);
+  border: 5px solid var(--color-border);
+  color: var(--color-fuente);
+  border-radius: 10px;
+  margin: 10px auto;
 }
 
-
-#numeroPedido{ 
-  font-family: Arial, Helvetica, sans-serif;
+.numeroPedido{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 5px solid var(--color-border);
+  background-color: var(--color-secundario);
   font-size: 20px;
   font-weight: bolder;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 5px solid black;
-  background-color: blueviolet;
+  color: var(--color-fuente);
   padding: 15px;
-  
+
 }
 .producto {
-  border-bottom: 5px solid black;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  background-color: rgb(229, 194, 135);
+  border-bottom: 5px solid var(--color-border);
+  background-color: var(--color-terciario);
 }
 
 img,
 #listo {
-  display: block;
-  margin: 0 auto;
   width: 90px;
   height: 70px;
+  display: block;
+  margin: 0 auto;
   margin-top: 15px;
   margin-bottom: 5px;
 }
@@ -81,75 +67,45 @@ img,
 #listo {
   margin-top: -47px;
   margin-bottom: 5px;
-  margin-left: 560px;
+  margin-left: 400px;
 }
 
 
 p {
-  font-family: Arial, Helvetica, sans-serif;
   display: block;
   font-size: 19px;
   margin-bottom: 10px;
   margin-left: 10px;
+  color: var(--color-fuente);
 }
 
 button {
-
   height: 40px;
-  background-color: blueviolet;
+  background-color: var(--color-button);
   font-size: 25px;
-  color: white;
+  color: var(--color-fuente);
   font-weight: bolder;
+  cursor: pointer;
 }
 
-
-//  telefono 
-@media (max-width: 575px) {
-
-  .verPedidos {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  h1 {
-    font-size: 12px;
-  }
-
-  #listo {
-    margin-top: -47px;
-    margin-bottom: 5px;
-    margin-left: 138px;
-  }
-
-  button {
-    height: 20px;
-    background-color: rgb(173, 188, 159);
-    font-size: 13px;
-  }
-
-  p {
-
-    font-size: 12px;
-  }
-
+button:hover{
+  background-color: var(--color-secundario);
+  color: var(--color-fuente);
 }
 
 
 // tablet
 @media (min-width: 576px) and (max-width: 996px) {
 
-  h1 {
-    width: 100%;
-  }
 
-  .verPedidos {
-
-    width: 90%;
-  }
-
-  #listo {
-    margin-left: 172px;
-  }
 
 }
+
+//  telefono
+@media (max-width: 575px) {
+
+
+
+}
+
+

@@ -1,47 +1,43 @@
+@import url(../../../styles.scss);
+
 h1 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 30px;
-  text-align: center;
-  font-weight: bolder;
-  color: white;
   width: 100%;
   height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: blueviolet;
+  background-color: var(--color-terciario);
+  color: var(--color-fuente);
+}
+
+.recibiendoPedido {
+  width: 100%;
+  height: 100%;
+  display: flex;
 }
 
 
 img {
-  display: block;
-  margin: 0 auto;
   width: 60%;
   height: 30%;
+  display: block;
+  margin: 0 auto;
   margin-top: 15px;
   margin-bottom: 5px;
-  border: 3px solid blueviolet;
+  border: 3px solid var(--color-border);
 }
 
-.verPedidos {
-  width: 100%;
-  height: 100%;
-  font-family: Arial, Helvetica, sans-serif;
 
-}
 
 .producto {
   width: 70%;
   height: 30%;
-  border: 2px solid black;
-  border-radius: 20px 20px 20px 20px;
-  background-color: rgb(229, 194, 135);
+  border: 2px solid var(--color-border);
+  border-radius: 20px;
+  background-color: var(--color-primario);
 
 }
 
-#descricionOrden {
-  font-size: 20px;
-}
 
 p {
   margin-left: 10px;
@@ -51,21 +47,20 @@ p {
 #numeroPedido {
   font-size: 20px;
   font-weight: bolder;
-  color: white;
+  color: var(--color-fuente);
   display: flex;
   align-items: center;
   justify-content: center;
   border-bottom: 2px solid black;
-  background-color: blueviolet;
+  background-color: var(--color-primario);
   padding: 15px;
-  border-radius: 20px 20px 0px 0px;
+  border-radius: 20px;
 }
 
 
-#cadaPedido {
+.ulPedido {
   width: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: left;
   list-style: none;
 }
@@ -73,13 +68,13 @@ p {
 .entregado {
   width: 71%;
   height: 40px;
-  background-color: blueviolet;
-  font-size: 25px;
-  color: white;
-  font-weight: bolder;
-  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 25px;
+  color: var(--color-fuente);
+  font-weight: bolder;
+  border-radius: 20px;
+  background-color: var(--color-button);
   margin-top: 25%;
 }

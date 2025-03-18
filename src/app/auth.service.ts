@@ -47,7 +47,7 @@ export class AuthService {
   obtenerOrdenesCocina(): Observable<any[]> {
     // Crear los encabezados con el token JWT
     const headers = new HttpHeaders({
-      'Authorization': `Bearer ${this.token}`
+      Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
     });
 
     // Enviar la solicitud HTTP con los encabezados
@@ -57,18 +57,18 @@ export class AuthService {
 
   marcarOrdenComoListo(idOrden: number): Observable<any> {
     const authToken = localStorage.getItem('accessToken');
-    
+
     if (!authToken) {
       console.error('No se encontró el token de autenticación.');
       return of(undefined);
     }
-  
+
     const httpOptions = {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${authToken}`
       })
     };
-  
+
     // Aquí puedes ajustar la URL según tu API
     return this.http.patch<any>(`${this.apiUrl}/orders/${idOrden}`, { status: 'delivering' }, httpOptions);
   }

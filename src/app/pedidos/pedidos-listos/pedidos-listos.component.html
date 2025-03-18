@@ -1,6 +1,6 @@
 <h1>Pedidos del dia a entregar</h1>
-<section class="verPedidos">
-  <ul *ngFor="let orden of pedidosListoCocina" id="cadaPedido">
+<section class="recibiendoPedido">
+  <ul *ngFor="let orden of pedidosListoCocina" id="cadaPedido" class="ulPedido">
     <li *ngFor="let productoListo of orden.products" class="producto">
       <div id="numeroPedido">Pedido N° {{orden.id}}</div>
       <img [src]="productoListo.product.image" alt="Imagen del producto">

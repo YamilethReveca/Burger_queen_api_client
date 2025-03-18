@@ -1,4 +1,4 @@
-
+@import url(../../../styles.scss);
 /* Estilos generales */
 
 .contenedor {
@@ -12,6 +12,8 @@
   width: 20%;
   height: 100%;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   background-color: var(--color-terciario);
 }
@@ -38,14 +40,16 @@ form {
 
 .contenedor__contenido {
   width: 100%;
-  display: flex;
+  display: flex;  
 }
 
 ul {
   width: 50%;
   height: 100%;
   box-sizing: content-box;
-  display: grid;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 10px;
   list-style: none;
 }
@@ -75,8 +79,8 @@ img {
 // aca nuevo
 
 .orden {
-  width: 50%;
-  height: 300px;
+  width: 30%;
+  height: auto;
   display: flex;
   flex-direction: column;
   color: var(--color-fuente);
@@ -84,6 +88,7 @@ img {
   background-color: var(--color-primario);
   border-radius: 5px;  
   padding: 13px;
+  margin-right: 30px;
 }
 
 .titulo {
@@ -103,7 +108,7 @@ input{
 
 .agregar {
   display: flex;
-  flex-direction: row; /* Alinear elementos en fila */
+  flex-direction: row; 
   justify-content: space-between; /* Distribuye los elementos uniformemente */
   align-items: center;
   width: 100%;
@@ -114,6 +119,7 @@ input{
 .agregado__contenido {
   display: flex;
   align-items: center; /* Alinea texto e ícono verticalmente */
+  justify-content: space-between;
   gap: 10px; /* Espacio entre elementos */
 }
 
@@ -121,4 +127,136 @@ input{
   width: 20px; /* Tamaño ajustado para mayor visibilidad */
   height: 20px;
   cursor: pointer;
+}
+
+.total{
+  text-align: center;
+  font-size: 23px;
+}
+
+.boton{
+  width: 100%;
+  height: 50px;
+  color: var(--color-fuente);
+  background-color: var(--color-button);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.boton:hover{
+  background-color: var(--color-secundario);
+  color: var(--color-fuente);
+ 
+}
+
+
+/* Tablet (576px - 996px) */
+@media (max-width: 996px) {
+  .contenedor {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .opciones {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+  }
+
+  .contenedor__contenido {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ul {
+    width: 90%;
+    justify-content: center;
+  }
+
+  li {
+    width: 180px;
+    height: 140px;
+  }
+
+  img {
+    width: 70px;
+    height: 60px;
+  }
+
+  .orden {
+    width: 90%;
+    margin-top: 20px;
+  }
+
+  .boton {
+    width: 100%;
+    height: 45px;
+  }
+}
+
+/* Móviles (hasta 575px) */
+@media (max-width: 575px) {
+  .contenedor {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .opciones {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .opcion,
+  .pedidosTerminados {
+    width: 100px;
+    height: 40px;
+    font-size: 12px;
+  }
+
+  .contenedor__contenido {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ul {
+    width: 100%;
+    padding: 0;
+    justify-content: center;
+  }
+
+  li {
+    width: 150px;
+    height: 120px;
+  }
+
+  img {
+    width: 60px;
+    height: 50px;
+  }
+
+  .descripcionProductos {
+    font-size: 12px;
+  }
+
+  .orden {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+  }
+
+  .boton {
+    width: 100%;
+    height: 40px;
+  }
 }

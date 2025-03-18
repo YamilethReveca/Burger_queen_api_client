@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/auth.service';
-import { Observable } from 'rxjs';
+import { tap} from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -20,28 +20,23 @@ export class CocinaComponent implements OnInit {
   }
 
   obtenerOrdenesCocina(): void {
-    this.authService.obtenerOrdenesCocina().subscribe(
-      (ordenes: any[]) => {
-        // Iterar sobre las órdenes para agregar la hora del pedido y la hora de lista
+    this.authService.obtenerOrdenesCocina().pipe(
+      tap((ordenes: any[]) => {
         this.ordenes = ordenes.map(orden => {
-          let horaPedido = this.formatDate(new Date(orden.dateEntry));
+          let horaPedido = orden.dateEntry ? this.formatDate(new Date(orden.dateEntry)) : '';
           let horaFinalizacion = orden.status && orden.status === 'delivering' ? this.formatDate(new Date()) : '';
-          horaPedido= horaPedido.length > 0 ? this.parsearStringFecha(horaPedido) : horaPedido;
-          horaFinalizacion= horaFinalizacion.length > 0 ? this.parsearStringFecha(horaFinalizacion) : horaFinalizacion;
-          
+          horaPedido = horaPedido ? this.parsearStringFecha(horaPedido) : '';
+          horaFinalizacion = horaFinalizacion.length > 0 ? this.parsearStringFecha(horaFinalizacion) : horaFinalizacion;
+
           const tiempoTranscurrido = this.calcularTiempoTranscurrido(horaPedido, horaFinalizacion);
-          return {
-            ...orden,
-            horaPedido: horaPedido,
-            horaLista: horaFinalizacion,
-            tiempoTranscurrido: tiempoTranscurrido
-          };
-        });      
-      },
-      (error) => {
-        console.error('Error al obtener las órdenes de cocina:', error);
-      }
-    );
+          return { ...orden, horaPedido, horaLista: horaFinalizacion, tiempoTranscurrido };
+        });
+
+        console.log("Órdenes recibidas:", this.ordenes);
+      })
+    ).subscribe({
+      error: (error) => console.error('Error al obtener las órdenes de cocina:', error)
+    });
   }
 
   marcarComoListo(idOrden: number): void {
@@ -64,12 +59,12 @@ export class CocinaComponent implements OnInit {
 
   private obtenerHoraPedido(idOrden: number): string {
     const orden = this.ordenes.find(ord => ord.id === idOrden);
-    return orden ? orden.horaPedido : null;
+    return orden ? orden.horaPedido : ''; // Devolvemos una cadena vacía en lugar de null
   }
 
   calcularTiempoTranscurrido(horaPedido: string, horaFinalizacion: string): string {
     if (!horaPedido || !horaFinalizacion) return 'Tiempo no disponible';
-    
+
     const fechaPedido = new Date(horaPedido);
     const fechaFinalizacion = new Date(horaFinalizacion);
 
@@ -88,7 +83,7 @@ parsearStringFecha(date:string){
   const fechaSeparada= date.split(", ");
   const fechaUno= fechaSeparada[0].split("/");
   fechaUno[0]= fechaUno[0].length > 1 ? fechaUno[0] : "0" + fechaUno[0];
-  fechaUno[1]= fechaUno[1].length> 1 ? fechaUno[1] : "0" + fechaUno[1];
+  fechaUno[1] = fechaUno[1] && fechaUno[1].length > 1 ? fechaUno[1] : "0" + fechaUno[1];
 
 
   const fechaFormateada= fechaUno.reverse().join("-");
@@ -97,7 +92,7 @@ parsearStringFecha(date:string){
   return fechaFinal;
 
   //["19", "02", "2024"]
-  
+
 }
 
 

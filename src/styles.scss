@@ -7,6 +7,8 @@
   --color-terciario:rgb(31, 125, 83); 
   --color-border: rgb(52, 73, 85);
   --color-fuente: #ffffff;
+  --font-family: 'Monterrat', sans-serif;
+  --font-size:20px;
   --color-button:rgb(120, 160, 131);
   
 }
@@ -26,7 +28,8 @@ html{
 
 body{
   height: 100%;
-
+  font-family: var(--font-family);
+  font-size: var(--font-size);
 }
 
 

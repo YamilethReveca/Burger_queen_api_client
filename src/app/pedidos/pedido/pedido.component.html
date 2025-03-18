@@ -1,17 +1,14 @@
 <section class="contenedor">
-  <div class="opciones">
-    <button class="opcion" (click)="cambiarMenu('Breakfast')">Desayuno</button>
-    <button class="opcion" (click)="cambiarMenu('Lunch')">Almuerzo</button>
-    <button class="opcion" (click)="cambiarMenu('Beverages')">Bebidas-Postre-Café</button>
-    <button class="opcion" (click)="cambiarMenu('Combos')">Combos</button>
-    <button class="opcion" (click)="cambiarMenu('Sides')">Sides</button>
-    <button class="pedidosTerminados" (click)="verPedidosListo()">Ver pedidos listo</button>
-  </div>
-
-
   <form>
-
     <section class="contenedor__contenido">
+      <div class="opciones">
+        <button class="opcion" (click)="cambiarMenu('Breakfast')">Desayuno</button>
+        <button class="opcion" (click)="cambiarMenu('Lunch')">Almuerzo</button>
+        <button class="opcion" (click)="cambiarMenu('Beverages')">Bebidas-Postre-Café</button>
+        <button class="opcion" (click)="cambiarMenu('Combos')">Combos</button>
+        <button class="opcion" (click)="cambiarMenu('Sides')">Sides</button>
+        <button class="pedidosTerminados" type="button" (click)="verPedidosListo()">Ver pedidos listo</button>
+      </div>
 
       <ul>
         <li *ngFor="let product of obtenerProductosFiltrados()" type="button"
@@ -43,11 +40,11 @@
           </div>
         </div>
         <div>
-          <div id="totalACancelar">Total a cancelar: ${{total}} </div>
+          <div class="total">Total: ${{total}} </div>
         </div>
 
         <div>
-          <button id="envioCocina" type="submit" (click)="enviarACocina()" [disabled]="!nombreCliente">Enviar</button>
+          <button class="boton" type="submit" (click)="enviarACocina()" [disabled]="!nombreCliente">Enviar</button>
         </div>
 
       </section>
