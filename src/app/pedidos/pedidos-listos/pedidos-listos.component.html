@@ -1,4 +1,4 @@
-<h1>Pedidos del dia a entregar</h1>
+<h1>Pedidos del dia por entregar</h1>
 <section class="recibiendoPedido">
   <ul *ngFor="let orden of pedidosListoCocina" id="cadaPedido" class="ulPedido">
     <li *ngFor="let productoListo of orden.products" class="producto">
@@ -12,6 +12,6 @@
         <p>Estado: {{ orden.status }}</p>
       </div>
     </li>
-    <button class="entregado">Entregado al cliente</button>
+    <button class="entregado">Despachar</button>
   </ul>
 </section>

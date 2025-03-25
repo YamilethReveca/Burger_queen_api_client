@@ -4,8 +4,8 @@
     <div class="numeroPedido">Pedido N° {{ orden.id }}</div>
     <p>Nombre cliente: {{ orden.client }}</p>
     <p>Estado: {{ orden.status }}</p>
-    <p>Hora de Pedido: {{ orden.horaPedido }}</p>
-    <p>Hora de Lista: {{ orden.horaLista }}</p>
+    <p>Hora de solicitud: {{ orden.horaPedido | date: 'longDate' }}</p>
+    <p>Hora de culminado: {{ orden.horaLista | date: 'longDate' }}</p>
     <p>Tiempo transcurrido: {{ orden.tiempoTranscurrido }}</p>
 
     <div *ngFor="let producto of orden.products" class="producto">

@@ -67,7 +67,7 @@ img,
 #listo {
   margin-top: -47px;
   margin-bottom: 5px;
-  margin-left: 400px;
+  margin-left: 245px;
 }
 
 
@@ -93,19 +93,75 @@ button:hover{
   color: var(--color-fuente);
 }
 
-
-// tablet
+//tablet
 @media (min-width: 576px) and (max-width: 996px) {
+  h1 {
+    height: 80px;
+    font-size: 22px;
+  }
 
+  .pedido__contenido {
+    width: 50%;
+    font-size: 14px;
+    margin: 10px auto;
+  }
 
+  img,
+  #listo {
+    width: 70px;
+    height: 55px;
+  }
 
+  #listo {
+    margin-left: 250px;
+  }
+
+  p {
+    font-size: 17px;
+  }
+
+  button {
+    font-size: 20px;
+    height: 35px;
+  }
 }
 
-//  telefono
+// teléfono
 @media (max-width: 575px) {
+  h1 {
+    height: 70px;
+    font-size: 20px;
+  }
 
+  .pedido__contenido {
+    width: 90%;
+    font-size: 13px;
+    margin: 10px auto;
+  }
 
+  .numeroPedido {
+    font-size: 18px;
+    padding: 10px;
+  }
 
+  img,
+  #listo {
+    width: 60px;
+    height: 45px;
+  }
+
+  #listo {
+    margin-left: 200px;
+  }
+
+  p {
+    font-size: 16px;
+    margin-left: 5px;
+  }
+
+  button {
+    font-size: 18px;
+    height: 35px;
+  }
 }
-
 

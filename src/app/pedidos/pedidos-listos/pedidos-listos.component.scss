@@ -1,80 +1,88 @@
 @import url(../../../styles.scss);
 
+
 h1 {
   width: 100%;
-  height: 100px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--color-terciario);
   color: var(--color-fuente);
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .recibiendoPedido {
-  width: 100%;
-  height: 100%;
-  display: flex;
-}
-
-
-img {
-  width: 60%;
-  height: 30%;
-  display: block;
-  margin: 0 auto;
-  margin-top: 15px;
-  margin-bottom: 5px;
-  border: 3px solid var(--color-border);
-}
-
-
-
-.producto {
-  width: 70%;
-  height: 30%;
-  border: 2px solid var(--color-border);
-  border-radius: 20px;
-  background-color: var(--color-primario);
-
-}
-
-
-p {
-  margin-left: 10px;
-}
-
-
-#numeroPedido {
-  font-size: 20px;
-  font-weight: bolder;
-  color: var(--color-fuente);
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
   justify-content: center;
-  border-bottom: 2px solid black;
-  background-color: var(--color-primario);
-  padding: 15px;
-  border-radius: 20px;
 }
-
 
 .ulPedido {
-  width: 100%;
-  display: flex;
-  justify-content: left;
   list-style: none;
+  background-color: var(--color-terciario);
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.producto {
+  width: 100%;
+  text-align: center;
+}
+
+#numeroPedido {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--color-fuente);
+  background-color: var(--color-secundario);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+img {
+  width: 120px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#descricionOrden {
+  text-align: left;
+  width: 100%;
+  padding: 10px;
+}
+
+p {
+  font-size: 14px;
+  color: var(--color-fuente);
+  margin: 5px 0;
 }
 
 .entregado {
-  width: 71%;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 25px;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
   color: var(--color-fuente);
-  font-weight: bolder;
-  border-radius: 20px;
+  font-weight: bold;
+  border-radius: 10px;
   background-color: var(--color-button);
-  margin-top: 25%;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.entregado:hover {
+  background-color: var(--color-secundario);
+  color: var(--color-fuente);
+
 }
